@@ -1,0 +1,48 @@
+\section{An Adaptive ACO for the ALBP}
+\subsection{Solution construction strategy}
+In order to use ACO to solve the ALBP, the processing jobs can be seen as nodes on a graph which will be traversed by ants, also the connections between jobs and workstations can be seen as arcs on the graph.
+The assignmnet of processing jobs to workstations can then be seen as an ant colony travels through the graph with the guidance of pheromone and heuristic information.
+
+The solution construction is a key step in emplying ACO to solve ALBP and this paper constructs a feasible solution by gradually assigning processing jobs to corresponding workstations.
+To this end, we define the following notations:
+\begin{itemize}
+	\item no-assigned task: a task that hasn't been assigned to any workstation yet
+	\item available task: a task that hasn't yet been assigned but satisfy precedence constraints between tasks, also all of its preceeding tasks have been assigned
+	\item assignable task: an available task that satisfies cycling constraints.
+\end{itemize}
+
+The feasible solution construction algorithm can then be described as follows:
+\begin{enumerate}
+	\item open a workstation
+	\item identify the set of available tasks from all no-assigned tasks and the precedence constraints among tasks, if the resulting set is empty, go to step 7
+	\item identify the set of assignable tasks from available tasks and the cycling constraint
+	\item if the set of assinable tasks is empty, go to step 6
+	\item select a task from the set of assinable tasks according to defined rules and assign it to the current workstation, go to step 2
+	\item open a new workstation, go to step 3
+	\item stop
+\end{enumerate}
+
+Using the way defined in the above algorithm to identify the set of assignable tasks, there always exists an optimal assinable task in the set.
+
+One key characteristic of ACO is its utilization of pheromone feedback and heuristic information during its search for global optimality; therefore, the way of pheromone updating and heuristic information selection have a huge impact on the performance of ACO.
+In this paper, we define $\tau_{ij}$ as the pheromone intensity on arc $(i,j)$ traversed by ants and represents the expectation of assigning task $i$ to workstation $j$.
+The corrresponding heuristic informaiton is computed by static precedence rules.
+In addition, the heuristic information of ACO consists of the maximal task completion time and maximal number of succedding tasks, and the visibility $\eta_i$ of task $i$ can be computed as
+\begin{align}
+	\eta_i = \frac{t_i}{C} + \frac{U_i}{max_{i = 1, 2, \cdots, N}U_i}
+\end{align}
+where $U_i$ is the number of succedding tasks of task $i$.
+
+
+\subsection{Objective function}
+
+
+
+
+
+
+\subsection{Pheromone update strategy}
+
+
+
+

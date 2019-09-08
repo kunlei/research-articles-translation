@@ -1,5 +1,6 @@
 \section{Assembly Line Balancing and Mathematical Model}
-ALBP refers to the assignment of finite job set to finite workstation set in order to maximize workstation utilization, minimize overall overload time and minimize balancing objective value, subject to processing constraints and workstation processing time satisfying cyclying requirements.
+
+ALBP refers to the assignment of finite job set to finite workstation set in order to maximize workstation utilization, minimize overall overload time and minimize balancing objective value, subject to processing constraints and workstation processing time satisfying cycling requirements.
 It involves the coordination of various processes within an assembly line and needs to address the inconsistency in process machining times.
 Assembly line productivity as well as product quality are both greatly affected by its balancing level.
 
@@ -13,4 +14,4 @@ The ALBP this paper aims to address can be mathematically described as follows:
 	& T(S_k) \leq C 
 \end{align}
 
-In this model, $L$ is the balancing rate of an assembly line; $I$ is the smoothing factor; $\lambda$ is an user-defined parameter and $\lambda > 1$; $E$ is the set of jobs within the assebmly line; $S_k$ is the set of jobs assigned to workstation $k$; $C$ is the assembly line cycle; $t_i$ is the processing time of job $i$; $T(S_k)$ is the total processing time of workstation $k$; $P$ is the precedence matrix of ALBP and $P = [P_{ij}]_{n\times n}$, $P_{ij} = 1$ job $i$ must be processed right before job $j$, 0 otherwise.
+In this model, $L$ is the balancing rate of an assembly line; $I$ is the smoothing factor; $\lambda$ is an user-defined parameter and $\lambda > 1$; $E$ is the set of jobs within the assembly line; $S_k$ is the set of jobs assigned to workstation $k$; $C$ is the assembly line cycle; $t_i$ is the processing time of job $i$; $T(S_k)$ is the total processing time of workstation $k$; $P$ is the precedence matrix of ALBP and $P = [P_{ij}]_{n\times n}$, $P_{ij} = 1$ job $i$ must be processed right before job $j$, 0 otherwise.
