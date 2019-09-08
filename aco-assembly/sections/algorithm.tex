@@ -33,16 +33,97 @@ In addition, the heuristic information of ACO consists of the maximal task compl
 \end{align}
 where $U_i$ is the number of succedding tasks of task $i$.
 
+In order to improve ACO's search capability and avoid stagnating into local optima, we propose a hybrid search strategy by which an ant chooses task $i$ and assigns it to workstation $j$:
+\begin{align}
+	\alpha(x)=\begin{cases}
+	I_1 \ \ \text{arg} max_{i \in N_j}(\tau_{ij}(t))^{\alpha} (\eta_i)^{\beta}, 0 \leq r \leq r_1 \\
+	I_2 \ \ p_{ij} = \frac{(\tau_{ij}(t))^{\alpha} (\eta_i)^{\beta}}{\sum_{z \in N_j}(\tau_{zj}(t))^{\alpha} (\eta_z)^{\beta}}, r_1 < r \leq r_1 + r_2 \\
+	I_3 \ \ i \in N, r_1 + r_2 < r \leq r_1 + r_2 + r_3
+	\end{cases} \label{formula7}
+\end{align}
+where $r$ is a random number chosen from (0, 1); $r_1, r_2, r_3$ is a user-defined parameter and $0 \leq r_1, r_2, r_3 \leq 1, r_1 + r_2 + r_3 = 1$; $N_j$ is the set of assignable tasks for ant $i$ on the current workstation $j$; $z$ is an assignable task; and $\alpha, \beta$ are two key parameters deciding pheromone intensity and heuristic information.
+
+This hybrid search strategy probabilistically chooses one of the three strategies: 1) utilization: choose with probability $r_1$ from assignable tasks $N_j$ the task with maximal $(\tau_{ij}(t))^{\alpha} (\eta_i)^{\beta}$ to assign to workstation $j$; 2) exploration: choose with probability $r_2$ that is given by $I_2$ in the equation a task; 3) random selection: choose with probability $r_3)$ a task from the set of assignable tasks.
+
+Following the aforementioned strategy, save the assignable task chosen by ant $k$ into table $tabu_k$ and when all $n$ tasks have been added to $tabu_k$, ant $k$ has finished on traversal of the search graph and the resulting task sequence is a feasible solution to the underlying problem.
 
 \subsection{Objective function}
+The quality of a constructed solution following the strategy described in the previous section must be evaluated and this section defines the objective function for this purpose.
+The type 1 assembly line balancing problem (ALBP-1) aims to minimize the number of workstations given a fixed cycle time; However, many solutions tend to have the same objective value if we use the number of workstations $m$ as objective function and it is therefore difficult to identify good solutions.
+In order to facilitate the pheromone acculation during ants' searching process, this paper uses the following objective function:
+\begin{align}
+	\text{max} f(m) = \lambda L - I 
+	= \lambda \frac{\sum_{i = 1}^{n} t_i}{mC} - \sqrt{\frac{\sum_{k=1}^m (max(T(S_k)) - T(S_k)^2}{m}} \label{formula8}
+\end{align}
 
-
+This function employs both assembly line balancing rate $L$ and smoothing factor $I$ to evaluate the quality of an assembly line balancing solution.
+Using this objective function, an assembly line with better balance has higher $L$ value and smaller $I$ value.
+We give $L$ a bigger weight $\lambda > 1$ considering the comparative importance of $L$ and $I$. 
+This objective function improves ACO's capability to identify better solutions from solutions with the same number of workstations, enhances the learning and upating of pheromones and speeds up the algorithm's convergence rate. 
 
 
 
 
 \subsection{Pheromone update strategy}
+The pheromone update strategy in this paper utilizes a combination of local pheromone update and glocal pheromone update from ant colony system.
+
+\begin{itemize}
+	\item local pheromone trail update: when the algorithm constructs a feasible solution, the pheromone on arc $(i,j)$ is updated using the following equation after an ant assigns task $i$ to workstation $j$:
+	\begin{align}
+		\tau_{ij}(n) = (1- \rho_1)\tau_{ij} (n-1) + \rho_1 \tau_0 \label{formula9}
+	\end{align}
+	where $\rho_1$ is the evaporation factor of local pheromone and $0 \leq \rho_1 \leq 1$; $\tau_0$ is the initial pheromone level.
+	
+	Local pheromone trail updating aims to reduce the impact of assigned tasks on following ants traversing the same arc and improve the search capacility of un-explored arcs, which increases the search space of the algorithm in order to explore those areas that contain the optimal solution. 
+	\item global pheromone trail update: After all the ants finish traversal, on the solution with the best objective value will be used to update the pheromone, which increases the search capability of ACO. In the current iteration, the best ant updates the global pheromone using the following equation:
+	\begin{align}
+		\tau_{ij}(t) = (1 - \rho_2) \tau_{ij} (t - 1) + \rho_2 \triangle \tau_{ij}^{gb} (t) \label{formula10}
+	\end{align}
+	where 
+	\begin{align}
+		\triangle \tau_{ij}^{gb} (t) = \begin{cases}
+		f(m) \ \ (i, j) \  \text{belongs to the currrent best solution} \\
+		0 \ \ \text{otherwise}
+		\end{cases}
+	\end{align}
+	and $\rho_2$ is the global pheromone evaporation factor, $0 \leq \rho_2 \leq 1$ and $f(m)$ is the objective value of the current optimal solution.
+\end{itemize}
+
+Using the aforementioned global pheromone trail updating strategy, the pheromone volume that belongs to the current best solution will be higher than other solutions after a few searching iterations.
+This can increases the convergence speed but might also suffer from local optima.
+In order to improve ACO's global searching capability, this paper proposes a strategy to adaptively modify the value of $\rho_2$ in order to prevent the pheromone intensity of certain arcs from getting too low or too high.
+We set the initial value of $\rho_2$ as $\rho_2(t_0) = 1$ and decrease its value when the best objective value doesn't improve after $N$ iterations:
+\begin{align}
+	\rho_2(t) = \begin{cases}
+	0.95 \rho_2(t - 1) \ \ 0.95 \rho_2(t - 1) \geq \rho_{2 min} \\
+	\rho_{2min}  \ \ \text{otherwise}
+	\end{cases} \label{formula11}
+\end{align}
+where $\rho_{2min}$ is the minimal value of $\rho_2$ and is used to prevent $\rho_2$ from getting too small during the search process, which may lead to slow convergence speed of the overall algorithm.
 
 
 
-
+\subsection{Algorithm workflow}
+The overall algorithm works as follows
+\begin{enumerate}
+	\item initialize algorithm parameters
+	\item open a workstation and create the set of initial available tasks and assignable tasks
+	\item conduct the following steps for every ant
+	\begin{enumerate}
+		\item initialize the pheromone value for every arc
+		\item choose a task from the set of assignable tasks using formual (\ref{formula7}) and assign it to the current open workstation
+		\item add the assigned task into table $tabu$
+		\item update the pheromone according to formula (\ref{formula9})
+		\item move to the next task and open a new workstation if the current open workstation is full
+		\item create new set of available tasks and assignable tasks
+		\item repat the above steps until all tasks are assigned
+	\end{enumerate}
+	\item compute the objective value for every ant using formula (\ref{formula8}) and identify the best solution, update the global best solution if the current best solution is better
+	\item udpate the global pheromone trail evaporation factor using formula (\ref{formula11})
+	\item update the global pheromone trail using formula (\ref{formula10})
+	\item set $N_c = N_c + 1$; 
+	\begin{enumerate}
+		\item if $N_c > N_{C_{max}}$, then output the best solution and stop
+		\item clear the table $tabu$ for all ants and go to step 2.
+	\end{enumerate}
+\end{enumerate}
