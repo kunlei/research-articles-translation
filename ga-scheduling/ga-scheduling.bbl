@@ -1,0 +1,106 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bautista and Pereira(2002)]{bautista9}
+Joaquin Bautista and Jordi Pereira.
+\newblock Ant algorithms for assembly line balancing.
+\newblock In Marco Dorigo, Gianni Di~Caro, and Michael Sampels, editors,
+  \emph{Ant Algorithms}, pages 65--75, Berlin, Heidelberg, 2002. Springer
+  Berlin Heidelberg.
+\newblock ISBN 978-3-540-45724-4.
+
+\bibitem[Bautista and Pereira(2007)]{bautista11}
+JoaquÃ­n Bautista and Jordi Pereira.
+\newblock Ant algorithms for a time and space constrained assembly line
+  balancing problem.
+\newblock \emph{European Journal of Operational Research}, 177\penalty0
+  (3):\penalty0 2016 -- 2032, 2007.
+\newblock ISSN 0377-2217.
+\newblock \doi{https://doi.org/10.1016/j.ejor.2005.12.017}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0377221705008490}.
+
+\bibitem[Colorni et~al.(1991)Colorni, Dorigo, and Maniezzo]{inproceedings8}
+Alberto Colorni, Marco Dorigo, and Vittorio Maniezzo.
+\newblock Distributed optimization by ant colonies.
+\newblock 01 1991.
+
+\bibitem[Kilincci(2010)]{kilincci2}
+Ozcan Kilincci.
+\newblock A petri net-based heuristic for simple assembly line balancing
+  problem of type 2.
+\newblock \emph{The International Journal of Advanced Manufacturing
+  Technology}, 46\penalty0 (1):\penalty0 329--338, Jan 2010.
+\newblock ISSN 1433-3015.
+\newblock \doi{10.1007/s00170-009-2082-z}.
+\newblock URL \url{https://doi.org/10.1007/s00170-009-2082-z}.
+
+\bibitem[McMullen and Tarasewich(2003)]{patrick10}
+Patrick~R. McMullen and Peter Tarasewich.
+\newblock Using ant techniques to solve the assembly line balancing problem.
+\newblock \emph{IIE Transactions}, 35\penalty0 (7):\penalty0 605--617, 2003.
+\newblock \doi{10.1080/07408170304354}.
+\newblock URL \url{https://doi.org/10.1080/07408170304354}.
+
+\bibitem[O. et~al.(2011)O., K., and T.]{azcan6}
+Ugur O., Talip K., and Bilal T.
+\newblock A genetic algorithm for the stochastic mixed-model u-line balancing
+  and sequencing problem.
+\newblock \emph{International Journal of Production Research}, 49\penalty0
+  (6):\penalty0 1605--1626, 2011.
+
+\bibitem[Ozcan and Toklu(2008)]{azcan7}
+U.~Ozcan and B.~Toklu.
+\newblock A tabu search algorithm for two-sided assembly line balancing.
+\newblock \emph{The International Journal of Advanced Manufacturing
+  Technology}, 43\penalty0 (7):\penalty0 822, Sep 2008.
+\newblock ISSN 1433-3015.
+\newblock \doi{10.1007/s00170-008-1753-5}.
+\newblock URL \url{https://doi.org/10.1007/s00170-008-1753-5}.
+
+\bibitem[Peeters and Degraeve(2006)]{peeter4}
+Marc Peeters and Zeger Degraeve.
+\newblock An linear programming based lower bound for the simple assembly line
+  balancing problem.
+\newblock \emph{European Journal of Operational Research}, 168\penalty0
+  (3):\penalty0 716 -- 731, 2006.
+\newblock ISSN 0377-2217.
+\newblock \doi{https://doi.org/10.1016/j.ejor.2004.07.024}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0377221704004813}.
+\newblock Balancing Assembly and Transfer lines.
+
+\bibitem[Ponnambalam et~al.(1999)Ponnambalam, Aravindan, and
+  Naidu]{ponnambalam5}
+S.~G. Ponnambalam, P.~Aravindan, and G.~Mogileeswar Naidu.
+\newblock A comparative evaluation of assembly line balancing heuristics.
+\newblock \emph{The International Journal of Advanced Manufacturing
+  Technology}, 15\penalty0 (8):\penalty0 577--586, Jul 1999.
+\newblock ISSN 1433-3015.
+\newblock \doi{10.1007/s001700050105}.
+\newblock URL \url{https://doi.org/10.1007/s001700050105}.
+
+\bibitem[Salveso(1955)]{salveson1}
+M.~E. Salveso.
+\newblock The assembly line balancing problem.
+\newblock \emph{The Journal of Industrial Engineering}, 6\penalty0
+  (3):\penalty0 1--25, 1955.
+\newblock URL \url{https://ci.nii.ac.jp/naid/10003095017/en/}.
+
+\bibitem[Scholl and Becker(2006)]{scholl3}
+Armin Scholl and Christian Becker.
+\newblock State-of-the-art exact and heuristic solution procedures for simple
+  assembly line balancing.
+\newblock \emph{European Journal of Operational Research}, 168\penalty0
+  (3):\penalty0 666 -- 693, 2006.
+\newblock ISSN 0377-2217.
+\newblock \doi{https://doi.org/10.1016/j.ejor.2004.07.022}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0377221704004795}.
+\newblock Balancing Assembly and Transfer lines.
+
+\end{thebibliography}
