@@ -1,0 +1,26 @@
+\section{Rolling Scheduling Strategy}
+The real-world manufacturing system scheduling is undeterministic due to unpredictable events or stochastic disturbances.
+Raman and Jian proposed a rolling horizon strategy to turn the undeterministic scheduling problem into a series of dynamic but deterministic scheduling problems.
+This is based on the successful industry applications of utilizing predictable control in continuous sytems to replace optimal control.
+The scheduling process is divided into continuous staitc scheduling horizons and each one is solved sequentially.
+This strategy is able to address the impact of undeterminisitc factors as well as incorporate system changes into scheduling plans.
+
+Rolling optimization is the key to rolling scheduling, which conducts static job scheduling by first removing finished jobs from the current scheduling horizon and then including available new jobs into the current scheduling horizon.
+This process is repeated until all jobs are finished processing.
+The selection of rolling horizon and job selection strategy play key roles in the overall scheduling efficiency.
+
+Applying rolling horizon into scheudling problem requires defining a rolling hoziron which encompasses multiple job sets: finished job set, processing job set, un-processed job set, available job set.
+In every rolling scheduling step, finished job set is first removed from the current rolling horizon, and available job set is then added, followed by statis scheduling optimiztion of this new job set.
+
+The rescheduling cycle is defined as the time interval of two consecutive schedulings.
+Normally, rescheduling times are evenly distributed, which does not consider the workload status of real-world manufacturing systems.
+A more resonable strategy is to associate rescheduling frequency with manufacturing workload.
+The number of jobs to be scheduled is limited by two factors: 1) more jobs are desired in order to improve machine utilization; 2) less jobs are preferred if the system has to incorporate urgent job insertions.
+The decision is largely based on real-time circumstances.
+
+There are three types of rolling-reschedulings: event-driven rescheduling, cycled rescheduling and hybrid rescheduling of the two.
+Event-driven rescheduling refers to a rescheduling triggerred by the advent of system status-changing events, which may include delayed arrivals of raw materials, delayed processing and machine break-downs.
+Cycled rescheduling refers to a rescheduling strategy controlled by pre-defined time intervals, which can be decided by planned deliveries, manufacturing workloads.
+There two strategies are not able to incorporate future events and cycled rescheduling cannot tackled urgent events.
+The hybrid strategy is more responsive to real-world dynamic manufacturing environments and therefore more stable.
+This paper employs this hybrid strategy by using cycled rescheduling as the general strategy and switching to event-driven rescheduling when urgent jobs emerge, including delayed raw materials arrive, machines break down, job delivery dates change and urgent jobs arrive.

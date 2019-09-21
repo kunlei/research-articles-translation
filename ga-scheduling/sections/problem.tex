@@ -1,17 +1,25 @@
-\section{Assembly Line Balancing and Mathematical Model}
+\section{Dynamic Scheduling Problem Description}
+Static scheduling problems involve $n$ jobs to be processed on $m$ machines and the scheduling plan can be determined after the processing order is decided for every job on all the machines.
+However, in real-world manufacturing systems, this processing order needs to be rescheduled whenever new orders arrive, machines break down or raw materials get delayed.
 
-ALBP refers to the assignment of finite job set to finite workstation set in order to maximize workstation utilization, minimize overall overload time and minimize balancing objective value, subject to processing constraints and workstation processing time satisfying cycling requirements.
-It involves the coordination of various processes within an assembly line and needs to address the inconsistency in process machining times.
-Assembly line productivity as well as product quality are both greatly affected by its balancing level.
+Dynamic scheduling views the job manufacturing as a dynamic process in which jobs become available for processing continuously, followed by machine processing and exiting the manufacturing system after their processes are finished.
+Dynamic events refer to entities that trigger the rescheduling of existing jobs due to changes in scheduling environment, and they can be classified into four categories:
+\begin{itemize}
+	\item job-related events, these include stochastic arrivals of jobs, undetermined job processing times, changes in delivery date, dynamic priorities and orders.
+	\item machine-related evenst, these include machine break-down, limited capacity, machine deadlock and conflicts in manufacturing capacity.
+	\item process-related events, these include process delay, quality negation and output unstability.
+	\item other events, these include absent operators, delayed arrival or unexpected flaws of raw materials, and dynamic processing routes.
+\end{itemize}
 
-The ALBP this paper aims to address can be mathematically described as follows:
+In the classical job shop static scheduling problems, the release times $r_i$ of all jobs are assumed to be zero and the objective is to minmize the makespan $C_{max}$, which is defined as the maximum completion time of all jobs, $C_{max} = \text{min}\{\text{max} C_i, i = 1, \cdots n\}$ where $C_i$ is the completion time of job $J_i$.
+In real-world dynamic manufacturing environments, however, jobs become available for process sequentially, meaning that their release times $r_i$ are different and unpredictable. 
+Since a job can only be processed after it becomes available, in dynamic scheduling problems, the maximum completion time of all jobs is determined by the completion time of the latest-released job.
+Therefore, dynamic scheduling problems generally use the mean flow time of all jobs as the objective function instead of the maximum completion time of all jobs.
+
+This paper considers two performance metrics often seen in dynamic manufacturing environments: 1) minimization of mean flow time $\bar{F}$ where $\bar{F} = \text{min}(\frac{1}{n} \times \sum_{i = 1}^n C_i - r_i)$ and $r_i$ and $C_i$ are the release time and completion time of job $J_i$, respectively.
+2) minimization of the weighted objective of maximum completion time $C_{max}$ and total tardiness. This weighted objective gives higher priority to urgent jobs which are required to finish by their due dates, and minimizes the completion times of remaining jobs.
+For a scheduling problem with $n$ jobs and $m$ machines, the objective can be defined as follows:
 \begin{align}
-	\text{max.} \quad & \lambda L - I \\
-	\text{s.t.} \quad & L = \frac{\sum_{i=1}^{n} t_i}{mC} \\
-	& I = \sqrt{\frac{\sum_{k=1}^{m} (max(T(S_k)) - T(S_k))^2}{m}} \\
-	& S_i \cap S_j = \emptyset, \ i, j = \{1, 2, \cdots\}, i \neq j \\
-	& \cup_k S_k = E, \ \forall i \in S_x, j \in S_y, 1 \leq x, y \leq n, x \leq y \  \text{if} \  P_{ij} = 1 \\
-	& T(S_k) \leq C 
+	\text{min}(\text{max}C_i + \alpha \times (\sum\text{max}(0, C_j - D_J))), \ (i \in S_{J_1}, j \in S_{J_2})
 \end{align}
-
-In this model, $L$ is the balancing rate of an assembly line; $I$ is the smoothing factor; $\lambda$ is an user-defined parameter and $\lambda > 1$; $E$ is the set of jobs within the assembly line; $S_k$ is the set of jobs assigned to workstation $k$; $C$ is the assembly line cycle; $t_i$ is the processing time of job $i$; $T(S_k)$ is the total processing time of workstation $k$; $P$ is the precedence matrix of ALBP and $P = [P_{ij}]_{n\times n}$, $P_{ij} = 1$ job $i$ must be processed right before job $j$, 0 otherwise.
+where $\alpha$ is the weighted penalty coefficient, $S_{J_1}$ is the job set that is being processed and $S_{J_2}$ is the newly inserted urgent job set, $C_i$ is the completion time for job $i \in S_{J_1}$, and $D_j$ is the delivery date for urgent job $j \in S_{J_2}$, and $C_j$ is the completion time.

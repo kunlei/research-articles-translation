@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 SEP 2019 21:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 SEP 2019 11:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -496,18 +496,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (./sections/abstract.tex) (./sections/introduction.tex [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./sec
-tions/problem.tex)
-(./sections/algorithm.tex [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
+tions/problem.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
- [3] [4] [5]
-[6]) (./sections/experiments.tex
-<sections/figure1.jpg, id=38, 533.995pt x 598.235pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
+ [2])
+(./sections/rolling-scheduling-strategy.tex [3])
+(./sections/dynamic-scheduling-strategy.tex [4]) (./sections/experiments.tex
+[5] <sections/figure1.jpg, id=32, 533.995pt x 598.235pt>
 File: sections/figure1.jpg Graphic file (type jpg)
 
 <use sections/figure1.jpg>
@@ -517,18 +517,13 @@ Package pdftex.def Info: sections/figure1.jpg used on input line 12.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<sections/figure2.png, id=39, 773.7708pt x 469.2732pt>
+[6 <./sections/figure1.jpg>]
+<sections/figure2.png, id=37, 773.7708pt x 469.2732pt>
 File: sections/figure2.png Graphic file (type png)
 
 <use sections/figure2.png>
 Package pdftex.def Info: sections/figure2.png used on input line 57.
 (pdftex.def)             Requested size: 375.80544pt x 227.91945pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Package caption Warning: \label without proper reference on input line 71.
@@ -537,107 +532,43 @@ See the caption package documentation for explanation.
 
 LaTeX Warning: Reference `tab:tab2' on page 7 undefined on input line 64.
 
-[7]
+[7 <./sections/figure2.png>]) (./sections/conclusions.tex) (./ga-scheduling.bbl
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) (./sections/conclusions.tex [8 <./sections/figure1.jpg>] [9 <./sections/figur
-e2.png>]) (./ga-scheduling.bbl
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ƒ in font cmr10!
-Missing character: There is no Â in font cmr10!
-Missing character: There is no ­ in font cmr10!
-
-Underfull \hbox (badness 3690) in paragraph at lines 17--26
-[]\OT1/cmr/m/n/10 Joaqun Bautista and Jordi Pereira.  Ant al-go-rithms for a ti
-me and space con-strained as-
- []
-
-
-Underfull \hbox (badness 7981) in paragraph at lines 17--26
-\OT1/cmr/m/n/10 sem-bly line bal-anc-ing prob-lem.  \OT1/cmr/m/it/10 Eu-ro-pean
- Jour-nal of Op-er-a-tional Re-search\OT1/cmr/m/n/10 , 177(3):2016
- []
-
-
-Underfull \hbox (badness 5388) in paragraph at lines 17--26
-\OT1/cmr/m/n/10 -- 2032, 2007.  ISSN 0377-2217.  doi: https://doi.org/10.1016/j
-.ejor.2005.12.017.  URL
- []
-
-
-Underfull \hbox (badness 2547) in paragraph at lines 66--76
-[]\OT1/cmr/m/n/10 Marc Peeters and Zeger De-graeve.  An lin-ear pro-gram-ming b
-ased lower bound for the sim-
- []
-
-
-Underfull \hbox (badness 5022) in paragraph at lines 66--76
-\OT1/cmr/m/n/10 ple as-sem-bly line bal-anc-ing prob-lem.  \OT1/cmr/m/it/10 Eu-
-ro-pean Jour-nal of Op-er-a-tional Re-search\OT1/cmr/m/n/10 , 168(3):
- []
-
-
-Underfull \hbox (badness 2707) in paragraph at lines 66--76
-\OT1/cmr/m/n/10 716 -- 731, 2006.  ISSN 0377-2217.  doi: https://doi.org/10.101
-6/j.ejor.2004.07.024.  URL
- []
-
-[10]
-Underfull \hbox (badness 3815) in paragraph at lines 95--105
-[]\OT1/cmr/m/n/10 Armin Scholl and Chris-tian Becker.  State-of-the-art ex-act 
-and heuris-tic so-lu-tion pro-ce-dures
- []
-
-
-Underfull \hbox (badness 3815) in paragraph at lines 95--105
-\OT1/cmr/m/n/10 for sim-ple as-sem-bly line bal-anc-ing.  \OT1/cmr/m/it/10 Eu-r
-o-pean Jour-nal of Op-er-a-tional Re-search\OT1/cmr/m/n/10 , 168(3):666
- []
-
-
-Underfull \hbox (badness 6348) in paragraph at lines 95--105
-\OT1/cmr/m/n/10 -- 693, 2006.  ISSN 0377-2217.  doi: https://doi.org/10.1016/j.
-ejor.2004.07.022.  URL
- []
-
-) [11] (./ga-scheduling.aux)
+) [8] (./ga-scheduling.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6122 strings out of 492995
- 87887 string characters out of 6132704
- 206873 words of memory out of 5000000
- 9514 multiletter control sequences out of 15000+600000
- 13673 words of font info for 52 fonts, out of 8000000 for 9000
+ 6084 strings out of 492995
+ 87407 string characters out of 6132704
+ 202372 words of memory out of 5000000
+ 9474 multiletter control sequences out of 15000+600000
+ 13159 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,16n,39p,590b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,13n,39p,590b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
 usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ga-scheduling.pdf (11 pages, 612185 bytes).
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
+ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on ga-scheduling.pdf (8 pages, 554995 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 99 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

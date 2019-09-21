@@ -1,0 +1,39 @@
+\section{Dynamic Scheduling Strategy}
+This paper proposes an improved genetic algorithm within the rolling horizon framework utilizing the hybrid cycled and event-driven rescheduling strategy.
+The job rescheduling within a horizon is achived by the proposed genetic algorithm and the solution can be used for exection.
+The following sections introduce the main components of the dynamic scheduling problems.
+
+\subsection{Dynamic scheduling solution encoding scheme}
+This paper uses a process-based encoding scheme in which all the processes of a job are indicated by the job number, and the $k$th occurance of the job indicates the $k$th process of the job.
+
+\subsection{Dynamic scheduling solution decoding scheme} 
+The scheduling solutino decoding scheme refers to the determination of the starting times of all process on all machines based on the current solution chromosome and process plans.
+For a process $i$, given a starting time $t_i$ and processing time of $p_i$, its completion time can be computed as $(t_i + p_i)$.
+The preceeding process of process $i$ is denoted by $JP[i]$ and the preceeding process of machine is $MP[i]$ if it exists.
+In dynamic scheduling problems, the machining starting times of jobs that are being processed or un-processing, and not the first process, can be calculated as 
+\begin{align}
+	t_i = \text{max}(t_{JP[i]} + p_{JP[i]}, t_{MP[i]} + p_{MP[i]})
+\end{align}
+the starting times of the first process can be computed as
+\begin{align}
+	t_i = \text{max}(\text{max}(t_{JP[i]} + p_{JP[i]}), t_{MP[i]} + p_{MP[i]})
+\end{align}
+
+For available processes, the starting time $t_i$ of the first process can be computed by 
+\begin{align}
+	t_i = max(r_i, t_{MP[i]} + p_{MP[i00]})
+\end{align}
+
+This paper uses a decoding algorithm based on greedy insertion and can gurantee to produce a feasible schedule after solution decoding.
+
+\subsection{Crossover and mutation operators}
+There exist many crossver operators in the literature, including PPX, SPX, POX, among which POX is able to inherit promising characteristics of parent solutions and is depicted in figure ?.
+
+The mutation operator randomly selects a gene and inserts it into another position in order to produce a small solution perturbation.
+
+
+\subsection{Selection operartor}
+
+
+\subsection{Improved genetic algorithm design}
+
