@@ -33,7 +33,25 @@ The mutation operator randomly selects a gene and inserts it into another positi
 
 
 \subsection{Selection operartor}
+Selection operator decides whether an individual enters the next generation based on its fitness value, which is defined as the objective function.
+The selection operator in genetic algorithm uses both strategies of elite model and tournament selection.
+The former identifies the best 1\% individuals in the current generation and allows them entering into the next generation directly without crossover.
+Tournament selection works by randomly selecting two individuals from the current generation and then chooses the one with better fitness value if a random number $r \in (0,1)$ is smaller than a predefined value $k$ which is set as 0.8. 
+Note that the chosen one will be allowed to be selected again in the next iteration of tournament selection.
+
 
 
 \subsection{Improved genetic algorithm design}
-
+Traditional genetic algorithm does not perform well in solving scheduling problems due to the acceptance of new offsprings created though the crossover operator, even if their fitness values are worse than that of their parent solutions, during which process good solutions are lost and damaged.
+This paper proposes an improved genetic algorithm utilizing a new offspring solution creation strategy.
+In this strategy, 2$n$ offspring solutions are created from $n$ iterations of crossover operators applied on two parent solutions, the two best offspring solutions are chosen as the final offspring solutions to enter the next iteration.
+Computational results show that the improved algorithm performs superior than traditional genetic algorithm in both convergence rate and solution quality.
+For example, the optimal solution with objective value of 930 is obtained using the improved genetic algorithm in solving the famous benchmark instance FT10.
+The algorithmic workflow is as follows:
+\begin{enumerate}
+	\item randomly create $P$ chromosome individual solutions and compute their corresponding objective values.
+	\item output the optimal solution if the stopping criteria is met; go to the next stop otherwise.
+	\item select the offspring solutions for the next generation according to the selection operator.
+	\item (1) apply crossover operator with probability $P_c$ on parent solution $n$ times to create 2$n$ offspring solutions, from which two best solutions are selected as the final offspring solutions; (2) apply mutation probability $P_m$ on offspring solutions to create mutated offsprings.
+	\item create new population and return to step 2.
+\end{enumerate}
