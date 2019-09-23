@@ -1,6 +1,6 @@
 \section{Rolling Scheduling Strategy}
 The real-world manufacturing system scheduling is undeterministic due to unpredictable events or stochastic disturbances.
-Raman and Jian proposed a rolling horizon strategy to turn the undeterministic scheduling problem into a series of dynamic but deterministic scheduling problems.
+Raman \citep{raman19933} and Jian\citep{jian19972} proposed a rolling horizon strategy to turn the undeterministic scheduling problem into a series of dynamic but deterministic scheduling problems.
 This is based on the successful industry applications of utilizing predictable control in continuous sytems to replace optimal control.
 The scheduling process is divided into continuous staitc scheduling horizons and each one is solved sequentially.
 This strategy is able to address the impact of undeterminisitc factors as well as incorporate system changes into scheduling plans.
@@ -21,6 +21,6 @@ The decision is largely based on real-time circumstances.
 There are three types of rolling-reschedulings: event-driven rescheduling, cycled rescheduling and hybrid rescheduling of the two.
 Event-driven rescheduling refers to a rescheduling triggerred by the advent of system status-changing events, which may include delayed arrivals of raw materials, delayed processing and machine break-downs.
 Cycled rescheduling refers to a rescheduling strategy controlled by pre-defined time intervals, which can be decided by planned deliveries, manufacturing workloads.
-There two strategies are not able to incorporate future events and cycled rescheduling cannot tackled urgent events.
+There two strategies are not able to incorporate future events and cycled rescheduling cannot tackled urgent events\citep{jian19972}.
 The hybrid strategy is more responsive to real-world dynamic manufacturing environments and therefore more stable.
 This paper employs this hybrid strategy by using cycled rescheduling as the general strategy and switching to event-driven rescheduling when urgent jobs emerge, including delayed raw materials arrive, machines break down, job delivery dates change and urgent jobs arrive.
