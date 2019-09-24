@@ -1,0 +1,65 @@
+\section{Improved colonial competitive algorithm for the minimal hitting set problem}
+In this paper, we propose an improved colonial competitive algorithm by introducing the concept of independent countries in addition to the existing two types of countries, namely, empires and colonies, in classical CCA.
+They are defined as follows:
+\begin{itemize}
+	\item empire: empire countries strive to assimilate more colonies in the computational process of the algorithm.
+	\item colony: colony countries aim to learn from their corresponding empires in order to become either independent countries or new empire countries.
+	\item independent country: independent countries try to learn from and turn into empire countries.
+\end{itemize}
+
+The main differences between the improved CCA from the classical one exist in the country initialization, assimilation and update stages due to the introduction of independent countries in the algorithm workflow.
+
+
+\subsection{Empire initialization}
+The improved CCA requires three parameters, namely, $N_{imp}$, $N_{col}$ and $N_{ind}$, to indicate the number of empires, colonies and independent countries in the initial population.
+Therefore, the total number of countries in the initialization step is $N_{pop} = N_{imp} + N_{col} + N_{ind}$.
+The algorithm first randomly creates $N_{pop}$ solutions (countries) and selects the best $N_{imp}$ countries as empires, the rest countries will be marked as colonies and independent countries based on the parameters $N_{col}$ and $N_{ind}$.
+Note that independent countries are not influenced by any empire and therefore not part of any empires.
+Figure ? depicts the country classification in the initialization stage.
+
+
+
+\subsection{Solution encoding}
+Solution encoding scheme is the key step in applying colonial competitive algorithm to optimization problems and will greatly affect its performance thereafter.
+Binary encoding theme is the most widely used method since it is easy to implement.
+
+For a set group $U$, an assimilation step is first conducted to remove all the sets that encompass any other sets, which can greatly reduce the number of hitting sets.
+Only the encompassed sets, denoted by $U_i$, are left after the assimilation process. 
+Let $n$ indicate the number of sets available in the set group after the assimilation process.
+Let $R$ represent the union of all sets in the set group, that is, $R = \cup_{i = 1, 2, \cdots, n}U_i, |R| = N$.
+It is clear that the minimal hitting set is a proper subset of $R$ and every element in $R$ either exists or does not exist in the minimal hitting set.
+Therefore, a binary value can be used to indicate whether an element in $R$ shows up in the minimal hitting set.
+In this way, the minimal hitting set can be represented by an array of length $N$ and each element in the array must be a binary value of either 0 or 1.
+
+In order to create good approximations of the minimal hitting set in the initial population, reduce the number of algorithm iterations, and decrease the minimizing calculations, the average number of array elements with value of 1 is set to be close to the number of elements in the minimal hitting set.
+Let $X$ denote the average number of elements in the minimal hitting set and $\beta$ be the probability that an element takes the value of 1, then,
+\begin{align}
+	\beta = X / N
+\end{align}
+
+Since the value of $X$ is unknown in general, the value of $\beta$ must be approximated, which is empirically set to $0.1 \sim 0.5$.
+Note that the value of $\beta$ increases when $n$ increases.
+
+Let $Y$ be a chromosome and the gene at the $i$th ($i < N$) position be $x_i$, then $Y = \{x_1, x_2, \cdots, x_N\}$.
+The following method is used to create the initial solution based on the binary encoding scheme:
+randomly create a number $\xi_i \in (0, 1)$, let $x_i = 1$ if $\xi_i < \beta$; let $x_i = 0$ if $\xi_i \geq \beta$.
+
+\subsection{Fitness function}
+The definition of fitness function plays a key role in deciding an algorithm's search efficiency.
+
+
+
+\subsection{Minimizing operators}
+
+
+
+\subsection{Competition}
+
+
+\subsection{Assimilation}
+
+
+\subsection{Update}
+
+
+\subsection{Empire removal}
