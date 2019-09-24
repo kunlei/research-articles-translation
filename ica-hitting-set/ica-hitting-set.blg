@@ -4,10 +4,6 @@ The top-level auxiliary file: ica-hitting-set.aux
 The style file: plainnat.bst
 I found no \citation commands---while reading file ica-hitting-set.aux
 Database file #1: biblio.bib
-Illegal end of database file---line 125 of file biblio.bib
- :  year={2004}
- :             
-I'm skipping whatever remains of this entry
 You've used 0 entries,
             2773 wiz_defined-function locations,
             592 strings with 4848 characters,
@@ -49,4 +45,4 @@ warning$ -- 0
 while$ -- 0
 width$ -- 0
 write$ -- 7
-(There were 2 error messages)
+(There was 1 error message)

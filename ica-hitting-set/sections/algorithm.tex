@@ -45,21 +45,105 @@ The following method is used to create the initial solution based on the binary 
 randomly create a number $\xi_i \in (0, 1)$, let $x_i = 1$ if $\xi_i < \beta$; let $x_i = 0$ if $\xi_i \geq \beta$.
 
 \subsection{Fitness function}
-The definition of fitness function plays a key role in deciding an algorithm's search efficiency.
+The definition of fitness function plays a key role in an algorithm's search efficiency.
+The fitness value shows the competitiveness of an solution regarding the objective function and it is also used in the algorithm to decide the solution's capacity to produce offsprings.
+Fitness function is often called objective function and is normally used to evaluate individual solution's quality.
+The objective function differs in different problems.
+
+In order to assign an objective value to an individual, its closeness to the optimal solution must be evaluated.
+For the minimal hitting setting problem, there are two necessary conditions: 1) a solution must be a hitting set; 2) any of the solution's proper subset must not be a hitting set.
+This paper uses a objective function defined as $f(x) = t$, where $t$ indicates the number of non-empty intersections of the current solution with every set in the set group.
+Note that the number of elements in a set cannot decide whether any proper subset of a set is a hitting set.
+The objective function drives a solution to converge to hitting set, not necessarily the minimal hitting set, and the transformation of the resulting hitting set into minimal hitting set is required.
 
 
 
 \subsection{Minimizing operators}
+As discussed in the previous section, the hitting set produced by a solution is not necessarily the minimal hitting set, and the purpose of the minimizing operators in this paper is to convert the superset into the corresponding minimal hitting set.
+To this purpose, all individual gene from an individual with value of 1 are converted into 0 and the fitness value is computed.
+If the fitness value does not change, the conversion is saved.
+This conversion is repeated for each gene within a solution until all genes are converted and the individual will produce a minimal hitting set.
 
+Within an individual, the genes with values of 1 are often related, meaning that whether we can convert a gene from 1 to 0 is affected by other genes with values of 1.
+To decide whether elements are related, we need to check the locations corresponding to the elements after assimilation.
+If there are two or more elements in the assimilated set, the elements are related; otherwise, they are not related.
+
+If we scan all the genes within a solution chromosome sequentially starting from the first gene, we can find that the probability of converting genes from 1 to 0 is higher for those located in the front of the chromosome than those in the back.
+In this case, individuals represented by genes in the front part of the chromosome have higher probability to show up in the minimal hitting set than those located in the back.
+In order to assign equal probability to genes regardless of the relative positions on the chromosome, a random scanning scheme is adopted to convert the superset into minimal hitting set.
+
+The minimizing operator works as follows:
+\begin{itemize}
+	\item check whether the current object is hitting set of not, if so, go to step (2), other make no changes to the object.
+	\item starting scanning the chromosome at position $k$ where $k$ is a random number and $k < N$, convert a gene value from 1 to 0 if applicable and compute its objective value. Keep the change if the resulting solution is a hitting set; otherwise, reverse the change. Let $k = k + 1$. Let the scanning position be $k - N$ if $k \geq N$. After all the chromosome is scanned, the resulting objective represents a minimal hitting set and copy the distinct components into the final solution.
+\end{itemize}
 
 
 \subsection{Competition}
+Similar to classical CCA, the improved CCA needs to calculate the total energy for each empire, which is determined by all the energies of its colonies:
+\begin{align}
+	E_{C_n} = J_n + \alpha \times \text{mean}\{J_m\}
+\end{align}
+where $E_{C_n}$ is the total energy of the $n$th empire; $\alpha \in (0, 1)$ is used to control the weight of the all the colonies' energies in the final total energy of the empire.
+Note that a bigger $\alpha$ value indicates a smaller weight, whereas a smaller $\alpha$ value indicates a bigger weight.
+Normally, $\alpha$ is set to 0.1
+In addition, $J_n$ represents all the colonies' energy and $J_m$ is the energy of the $m$th colony of the $n$th empire.
 
+Another similarity between classical CCA and the improved CCA is that all the empires try to possession more colonies to increase their total energies.
+Some empires will have more and more colonies in the competing process, which will result in some empires losing their colonies gradually.
+The competition works as follows: 1) identify the weakest colony from the empire with the smallest total energy and set the colony as free; 2) all the empires compete for the free colony.
+The competition result is decided using a probability value that is associated with the empire's strength, in other words, more powerful empire has higher probability of getting the free colony.
+
+The probability computation requires the normalised total energy of an empire $E_{CN_n}$: 
+\begin{align}
+	E_{CN_n} = E_{C_n} - \text{max}_{n = 1}^{N_{imp}}\{E_{C_n}\}
+\end{align}
+where $E_{C_n}$ and $E_{CN_n}$ represents the empire's total energy and normalised total energy, respectively.
+The competition probability can therefore be computed as $P_n$:
+\begin{align}
+	P_n = |E_{CN_n}/\text{max}_{n = 1}^{N_{imp}}\{E_{C_n}\}|
+\end{align}
+
+In order to assign the free colony to an empire, construct the following vector:
+\begin{align}
+	P = (p_1, p_2, \cdots, p_{N_{imp}})
+\end{align}
+and another evenly distributed vector $R$ of the same size:
+\begin{align}
+	R = (r_1, r_2, \cdot, r_{N_{imp}}), \ \ r_1, r_2, \cdots, r_{N_{imp}} \in U(0, 1)
+\end{align}
+then we get the following vector $D$:
+\begin{align}
+	D = P-R 
+	= (D_1, D_2, \cdots, D_{N_{imp}}) 
+	= (p_1 - r_1, p_2 - r_2, \cdots, p_{N_{imp}} - r_{N_{imp}})
+\end{align}
+
+Based on the above computations, the free colony will be assigned to the empire with the biggest $D$ value.
+The competition process is shown in figure ?.
 
 \subsection{Assimilation}
+There exist two types of assimilation in the improved CCA, namely, assimilation within an empire and assimilation between an empire and an independent country.
+The former assimilation process involves on the empire and its colonies and is the same with the classical CCA.
+The latter assimilation process is described as follows:
+\begin{itemize}
+	\item an independent country will move to all empires and the movement process is the same with that of colony to its empire.
+	The movement process is achieved by the crossover and mutation operators.
+	This paper uses the single-point crossover operator and the mutation operator randomly selects a gene to reverse its current value in order to generate a new solution.
+	\item separate new independent country is generated after the movement toward every empire and the best one is  used as the new independent country.
+\end{itemize}
 
+The assimilation processes are depicted in figure ?.
+It can be seen from the figure that empire assimilation only involves the empire and its associated colonies, which is different from the assimilation between an independent country and an empire.
+The attempts to move to every empires made by an independent country can speed up the algorithm's convergence rate by only selecting the best move; on the other hand, more computational times are required.
 
 \subsection{Update}
-
+The updating processes in the improved CCA include three types depicted in figure ?:
+\begin{itemize}
+	\item Updating process between an empire and its colonies. If the new colony created after the assimilation process has better objective value than that of the empire, it will become the new empire.
+	\item Updating process between an independent country and an empire. If the best independent country has better objective value than that of the weakest empire, it will replace the empire and the replaced empire will become an independent country.
+	\item Updating process between colonies and independent countries. If the best colony after assimilation has better objective value than that of the weakest independent country, it will replace the independent country, which will become a colony.
+\end{itemize}
 
 \subsection{Empire removal}
+The improved CCA uses the same empire removal step as in the classical CCA.
