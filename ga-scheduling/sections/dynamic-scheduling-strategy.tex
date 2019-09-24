@@ -27,10 +27,18 @@ For available processes, the starting time $t_i$ of the first process can be com
 This paper uses a decoding algorithm based on greedy insertion and can gurantee to produce a feasible schedule after solution decoding.
 
 \subsection{Crossover and mutation operators}
-There exist many crossver operators in the literature, including PPX\cite{cheng1999tutorial4}, SPX\citep{wang2001effective5}, POX\citep{zhang6}, among which POX is able to inherit promising characteristics of parent solutions and is depicted in figure ?.
+There exist many crossver operators in the literature, including PPX\cite{cheng1999tutorial4}, SPX\citep{wang2001effective5}, POX\citep{zhang6}, among which POX is able to inherit promising characteristics of parent solutions and is depicted in figure \ref{fig:fig1}.
 
 The mutation operator randomly selects a gene and inserts it into another position in order to produce a small solution perturbation.
 
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.6\linewidth]{sections/figure1.jpg}
+		\caption{POX crossover operator based on job sequence encoding}
+		\label{fig:fig1}
+	\end{center}
+\end{figure}
 
 \subsection{Selection operartor}
 Selection operator decides whether an individual enters the next generation based on its fitness value, which is defined as the objective function.
