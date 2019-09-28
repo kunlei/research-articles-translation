@@ -2,25 +2,78 @@
 In this paper, we randomly generated 50 arrays of size 10 with values no greater than 20.
 All the arrays are sorted non-decreasingly and all the equal numbers are set to 0.
 Put the 50 arrays into five groups: 1) the first group encompasses arrays 1 $\sim$ 10; 2) the second group encompasses arrays 1 $\sim$ 20; 3) the third group encompasses arrays 1 $\sim$ 30; 4) the first group encompasses arrays 1 $\sim$ 40; 5) the first group encompasses arrays 1 $\sim$ 50;
-These generated instances are solved using the modified CCA (MCCA) and the minimal hitting set algorithm based on dynamic maximum (DMDSE-Tree).
+These generated instances are solved using the modified CCA (MCCA) and the minimal hitting set algorithm based on dynamic maximum (DMDSE-Tree) \citep{c7zhang}.
 For each group, the minimal hitting set and average computation times from five runs are recorded to make further comparisons.
 
 The experiments are run on a Windows XP computer with Intel Pentium G630 2.70 GHz CPU and 2GB memory.
 All the algorithms are implemented using Visual C++ 6.0.
 The parameters of MCCA are set as follows: $N_{pop} = 100$, $N_{imp} = 7$, $N_{ind}  = 5$, the maximum number of iterations $N_{max} = 100$, the weight is set as $0.2, 0.3, \cdots, 0.8$ and $\alpha = 0.8$.
-The minimal hitting set and computational time comparisons between MCCA and DMDSE-Tree are given table ? and table ?, respectively.
+The minimal hitting set and computational time comparisons between MCCA and DMDSE-Tree are given table \ref{tab:tab1} and table \ref{tab:tab2}, respectively.
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Computational results using DMDSE-Tree}
+		\label{tab:tab1}
+		\begin{tabular}{ccccccccc}
+			\hline
+			\multirow{2}{*}{group} & \multirow{2}{*}{size} & \multirow{2}{*}{No. MHS} & \multicolumn{6}{c}{computation time (s)} \\
+			\cline{4-9}
+			& & & 1 & 2 & 3 & 4 &5 & average time \\
+			\hline 
+			1 & 10 & 348  & 6.468  & 7.297  & 7.531  & 8.031  & 6.812  & 7.2287 \\
+			2 & 20 & 861  & 21.932 & 21.671 & 22.734 & 20.750 & 22.172 & 21.8514 \\
+			3 & 30 & 2426 & 43.343 & 43.109 & 43.297 & 43.688 & 44.250 & 43.5374 \\
+			4 & 40 & 1618 & 61.516 & 59.562 & 59.953 & 58.828 & 58.921 & 59.7560 \\
+			5 & 50 & 3165 & 89.797 & 88.406 & 88.562 & 87.281 & 87.187 & 88.2466 \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
 
 
 
-
-
-
+\begin{table}[h!]
+	\begin{center}
+		\caption{Computational results using modified CCA}
+		\label{tab:tab2}
+		\begin{tabular}{ccccccccc}
+			\hline
+			\multirow{2}{*}{group} & \multirow{2}{*}{size} & \multirow{2}{*}{No. MHS} & \multicolumn{6}{c}{computation time (s)} \\
+			\cline{4-9}
+			& & & 1 & 2 & 3 & 4 &5 & average time \\
+			\hline 
+			1 & 10 & 322  &  4.312 & 4.297   &  4.625 & 4.469  & 5.672   & 4.6570   \\
+			2 & 20 & 766  & 15.219 &16.110   & 16.078 & 16.156 & 16.032  & 15.9190  \\
+			3 & 30 & 1489 & 29.656 & 29.875  & 31.234 & 30.453 & 30.906  & 30.4248  \\
+			4 & 40 & 2017 & 43.140 &  43.078 & 42.907 & 43.938 &  43.826 & 43.3778  \\
+			5 & 50 & 2909 & 62.656 &  66.219 & 63.016 & 64.762 & 62.318  & 63.9942  \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
 
 
 The experiments are run fives times and the average computation time and minimal hitting sets are obtained.
-Table ? shows the comparisons between computation time percentage and number of minimal hitting sets.
+Table \ref{tab:tab3} shows the comparisons between computation time percentage and number of minimal hitting sets.
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Comparison results}
+		\label{tab:tab3}
+		\begin{tabular}{cccccc}
+			\hline
+			& 1 & 2 & 3 &4 & 5 \\
+			\hline
+			MCCA time (s)        & 4.6750 & 15.9170 & 30.4248 & 43.3778 & 63.9942 \\
+			DMDSE-Tree time (s)  & 7.2278 & 21.8514 & 43.5374 & 59.7560 & 88.2466 \\
+			time percentage (\%) & 64.48  & 72.84   & 69.88   & 72.59   &  72.52  \\
+			MCCA no. MHS         & 322    &  766    &  1489   & 2017    & 2909  \\
+			DMDSE-Tree no.MHS    & 348    & 861     & 1618    & 2426    & 3165 \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
 
 
-
-It can be seen from table ? that MCCA is able to solve 90\% of instances with about 70\% of computational times when compared to DMDSE-Tree, which shows the superior performance of MCCA in solving minimal hitting set problem.
+It can be seen from table \ref{tab:tab3} that MCCA is able to solve 90\% of instances with about 70\% of computational times when compared to DMDSE-Tree, which shows the superior performance of MCCA in solving minimal hitting set problem.
 In addition, MCCA shows better robustness in solving problems with various scales.

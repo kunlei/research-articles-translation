@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 SEP 2019 15:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  28 SEP 2019 10:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -497,47 +497,112 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./sec
 tions/algorithm.tex
+[2]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 5.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
- [2] [3] [4]
-[5] [6]) (./sections/experiments.tex [7]) (./sections/application.tex [8])
-(./sections/conclusions.tex) (./ica-hitting-set.bbl
 
-Package natbib Warning: Empty `thebibliography' environment on input line 8.
+<sections/figure1.jpg, id=17, 520.94624pt x 299.1175pt>
+File: sections/figure1.jpg Graphic file (type jpg)
 
-) [9] (./ica-hitting-set.aux) ) 
+<use sections/figure1.jpg>
+Package pdftex.def Info: sections/figure1.jpg used on input line 23.
+(pdftex.def)             Requested size: 375.80544pt x 215.77977pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3] [4 <./sections/figure1.jpg>] [5] [6]
+<sections/figure2.jpg, id=36, 610.28pt x 427.5975pt>
+File: sections/figure2.jpg Graphic file (type jpg)
+
+<use sections/figure2.jpg>
+Package pdftex.def Info: sections/figure2.jpg used on input line 135.
+(pdftex.def)             Requested size: 375.80544pt x 263.31996pt.
+ [7 <./sections/figure2.jpg>]
+<sections/figure3a.jpg, id=41, 416.55624pt x 247.92625pt>
+File: sections/figure3a.jpg Graphic file (type jpg)
+
+<use sections/figure3a.jpg>
+Package pdftex.def Info: sections/figure3a.jpg used on input line 159.
+(pdftex.def)             Requested size: 211.38832pt x 125.81651pt.
+
+<sections/figure3b.jpg, id=42, 431.6125pt x 317.185pt>
+File: sections/figure3b.jpg Graphic file (type jpg)
+
+<use sections/figure3b.jpg>
+Package pdftex.def Info: sections/figure3b.jpg used on input line 163.
+(pdftex.def)             Requested size: 211.38832pt x 155.34456pt.
+ [8 <./sections/figure3a.jpg> <./sections/figure3b.jpg>] <sections/figure4a.jpg
+, id=46, 752.8125pt x 350.30875pt>
+File: sections/figure4a.jpg Graphic file (type jpg)
+
+<use sections/figure4a.jpg>
+Package pdftex.def Info: sections/figure4a.jpg used on input line 181.
+(pdftex.def)             Requested size: 375.80544pt x 174.88133pt.
+
+<sections/figure4b.jpg, id=47, 751.80875pt x 389.455pt>
+File: sections/figure4b.jpg Graphic file (type jpg)
+
+<use sections/figure4b.jpg>
+Package pdftex.def Info: sections/figure4b.jpg used on input line 186.
+(pdftex.def)             Requested size: 375.80544pt x 194.67947pt.
+
+<sections/figure4c.jpg, id=48, 744.7825pt x 342.27875pt>
+File: sections/figure4c.jpg Graphic file (type jpg)
+
+<use sections/figure4c.jpg>
+Package pdftex.def Info: sections/figure4c.jpg used on input line 191.
+(pdftex.def)             Requested size: 375.80544pt x 172.71098pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./sections/experiments.tex
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9]
+
+LaTeX Warning: Text page 10 contains only floats.
+
+[10 <./sections/figure4a.jpg> <./sections/figure4b.jpg> <./sections/figure4c.jp
+g>]) (./sections/application.tex
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11]) (./sections/conclusions.tex [12]) (./ica-hitting-set.bbl [13]) [14]
+(./ica-hitting-set.aux) ) 
 Here is how much of TeX's memory you used:
- 6055 strings out of 492995
- 86884 string characters out of 6132704
- 168412 words of memory out of 5000000
- 9453 multiletter control sequences out of 15000+600000
- 13159 words of font info for 50 fonts, out of 8000000 for 9000
+ 6178 strings out of 492995
+ 88967 string characters out of 6132704
+ 176420 words of memory out of 5000000
+ 9567 multiletter control sequences out of 15000+600000
+ 13505 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,10n,38p,557b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-7.pfb>
-Output written on ica-hitting-set.pdf (9 pages, 187534 bytes).
+ 39i,10n,39p,557b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbxti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.p
+fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on ica-hitting-set.pdf (14 pages, 442041 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 117 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

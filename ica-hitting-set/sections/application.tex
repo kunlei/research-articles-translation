@@ -5,17 +5,36 @@ Every manufacturing unit consists of multiple general-purpose machines.
 The studied company plans to manufacture a new product $P1$, which requires 23 self-made parts.
 Multiple parts can be produced within the same units due to the small volume and extra processing capacity.
 The problem is to use minimal number of units to produce the new product in order to reduce the impact on existing production plan.
-Table ? shows all the required parts and their corresponding unit.
+Table \ref{tab:tab4} shows all the required parts and their corresponding unit.
 
 
-% insert table 4 here
+\begin{table}[h!]
+	\begin{center}
+		\caption{Manufacturing units of parts}
+		\label{tab:tab4}
+		\begin{tabular}{cc|c|cc|c|cc}
+			\hline
+			part & manufacturing unit && part & manufacturing unit && part & manufacturing unit \\
+			\hline
+			1 & A B F H   && 9  & D H I J   && 17 & A J K \\
+			2 & C G H     && 10 & E H J L   && 18 & E L \\
+			3 & D J L     && 11 & H K       && 19 & D H I \\
+			4 & B I       && 12 & D F L     && 20 & B E J K \\
+			5 & A B E G K && 13 & B G J     && 21 & J L \\
+			6 & C D H L   && 14 & C J K L   && 22 & G \\
+			7 & D G H     && 15 & E H K     && 23 & E G K \\
+			8 & A C J L   && 16 & A C F H J &&    & \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
 
 
 
 The steps of using modified CCA to solve the minimal hitting set problem  to get the minimal number of production units are as follows:
 \begin{itemize}
 	\item Assign numbers to each manufacturing unit. In this case, 1 is assigned to A, 2 is assigned to B. Repeat this assignment until L is assigned 12. Create an input file by setting 5 as the number of manufacturing units corresponding to the parts, all units are set to 0.
-	\item Identify the minimal hitting set using the implemented C++ code using parameters $N_{pop} = 100$, $N_{imp} = 7$, $N_{ind} = 5$, $N_{max} = 100$ and weight set as 0.6. Table ? shows the computational results.
+	\item Identify the minimal hitting set using the implemented C++ code using parameters $N_{pop} = 100$, $N_{imp} = 7$, $N_{ind} = 5$, $N_{max} = 100$ and weight set as 0.6. Table \ref{tab:tab5} shows the computational results.
 	The minimal hitting sets that has the minimum number of element are: $\{7,8,9,11,12\}$,  $\{1,7,9,11,12\}$, $\{1,2,7,8,12\}$, $\{2,7,8,10,12\}$, $\{2,7,8,11,12\}$, $\{6,7,9,11,12\}$, $\{7,8,9,10,12\}$.
 	\item Convert the hitting set with the minimal number of elements into manufacturing units: $\{G,H,I,K,L\}$, $\{A,G,I,K,L\}$, $\{A,B,G,H,L\}$, $\{B,G,H,J,L\}$, $\{B,G,H,K,L\}$, $\{F,G,I,K,L\}$, $\{G,H,I,J,L\}$.
 \end{itemize}
@@ -23,8 +42,29 @@ The steps of using modified CCA to solve the minimal hitting set problem  to get
 Using the obtained manufacturing units to produce product $P1$, there is no need to change the production plans for other manufacturing units.
 It will incur less adjustment fees when product volume changes in the future.
 
-
-% insert table 5 here
+\begin{table}
+	\begin{center}
+		\caption{Computational results and analysis}
+		\label{tab:tab5}
+		\begin{tabular}{cc|c|cc}
+			\hline
+			MHS & no. elements & & MHS & no. elements \\
+			\hline
+			\{2, 4, 5, 7, 8, 10 \}  & 6  && \{6, 7, 9, 11, 12\}          & 5 \\
+			\{7, 8, 9, 11, 12 \}    & 5  && \{7, 8, 9, 10, 12 \}         & 5 \\
+			\{1, 7, 9, 11, 12 \}    & 5  && \{2, 4, 6, 7, 11, 12  \}     & 6 \\
+			\{1, 2, 7, 8, 12 \}     & 5  && \{4, 5, 6, 7, 9, 10, 11  \}  & 7  \\
+			\{1, 5, 7, 8, 9, 12 \}  & 6  && \{2, 4, 5, 7, 10, 11  \}     & 6  \\
+			\{2, 3, 4, 7, 11, 12 \} & 6  && \{2, 3, 7, 9, 11, 12  \}     & 6  \\
+			\{1, 2, 4, 7, 11, 12 \} & 6  && \{2, 4, 7, 10, 11, 12  \}    & 6 \\
+			\{2, 7, 8, 10, 12 \}    & 5  && \{ 5, 6, 7, 8, 9, 10 \}      & 6 \\
+			\{2, 7, 8, 11, 12 \}    & 5  && \{2, 7, 9, 10, 11, 12  \}    & 6 \\
+			\{2, 5, 6, 7, 8, 10 \}  & 5  && \{3, 5, 6, 7, 9, 10, 11  \}  & 7 \\
+			\{4, 5, 7, 8, 9, 10 \}  & 6  && \{1, 4, 5, 7, 9, 10, 11  \}  & 7 \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
 
 
 

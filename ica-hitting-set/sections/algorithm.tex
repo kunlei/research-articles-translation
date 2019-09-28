@@ -15,8 +15,16 @@ The improved CCA requires three parameters, namely, $N_{imp}$, $N_{col}$ and $N_
 Therefore, the total number of countries in the initialization step is $N_{pop} = N_{imp} + N_{col} + N_{ind}$.
 The algorithm first randomly creates $N_{pop}$ solutions (countries) and selects the best $N_{imp}$ countries as empires, the rest countries will be marked as colonies and independent countries based on the parameters $N_{col}$ and $N_{ind}$.
 Note that independent countries are not influenced by any empire and therefore not part of any empires.
-Figure ? depicts the country classification in the initialization stage.
+Figure \ref{fig:fig1} depicts the country classification in the initialization stage.
 
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{sections/figure1.jpg}
+		\caption{Empire initialization of modified CCA}
+		\label{fig:fig1}
+	\end{center}
+\end{figure}
 
 
 \subsection{Solution encoding}
@@ -120,7 +128,15 @@ then we get the following vector $D$:
 \end{align}
 
 Based on the above computations, the free colony will be assigned to the empire with the biggest $D$ value.
-The competition process is shown in figure ?.
+The competition process is shown in figure \ref{fig:fig2}.
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{sections/figure2.jpg}
+		\caption{Illustration of colony competition}
+		\label{fig:fig2}
+	\end{center}
+\end{figure}
 
 \subsection{Assimilation}
 There exist two types of assimilation in the improved CCA, namely, assimilation within an empire and assimilation between an empire and an independent country.
@@ -133,17 +149,52 @@ The latter assimilation process is described as follows:
 	\item separate new independent country is generated after the movement toward every empire and the best one is  used as the new independent country.
 \end{itemize}
 
-The assimilation processes are depicted in figure ?.
+The assimilation processes are depicted in figure \ref{fig:fig3}.
 It can be seen from the figure that empire assimilation only involves the empire and its associated colonies, which is different from the assimilation between an independent country and an empire.
 The attempts to move to every empires made by an independent country can speed up the algorithm's convergence rate by only selecting the best move; on the other hand, more computational times are required.
 
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{sections/figure3a.jpg}
+		\caption{Assimilation within empire}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{sections/figure3b.jpg}
+		\caption{Assimilation between empire and independent country}
+	\end{subfigure}
+	\caption{Illustration of assimilation of CCA}
+	\label{fig:fig3}
+\end{figure}
+
 \subsection{Update}
-The updating processes in the improved CCA include three types depicted in figure ?:
+The updating processes in the improved CCA include three types depicted in figure \ref{fig:fig4}:
 \begin{itemize}
-	\item Updating process between an empire and its colonies. If the new colony created after the assimilation process has better objective value than that of the empire, it will become the new empire.
-	\item Updating process between an independent country and an empire. If the best independent country has better objective value than that of the weakest empire, it will replace the empire and the replaced empire will become an independent country.
-	\item Updating process between colonies and independent countries. If the best colony after assimilation has better objective value than that of the weakest independent country, it will replace the independent country, which will become a colony.
+	\item Updating process between an empire and its colonies. If the new colony created after the assimilation process has better objective value than that of the empire, it will become the new empire. The process is illustrated in figure \ref{fig:fig4a}.
+	\item Updating process between an independent country and an empire. If the best independent country has better objective value than that of the weakest empire, it will replace the empire and the replaced empire will become an independent country.  The process is depicted in figure \ref{fig:fig4b}.
+	\item Updating process between colonies and independent countries. If the best colony after assimilation has better objective value than that of the weakest independent country, it will replace the independent country, which will become a colony. The process is shown in figure \ref{fig:fig4c}.
 \end{itemize}
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.8\linewidth}
+		\includegraphics[width=\linewidth]{sections/figure4a.jpg}
+		\caption{Update between empire and colony}
+		\label{fig:fig4a}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.8\linewidth}
+		\includegraphics[width=\linewidth]{sections/figure4b.jpg}
+		\caption{Update between empire and independent country}
+		\label{fig:fig4b}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.8\linewidth}
+		\includegraphics[width=\linewidth]{sections/figure4c.jpg}
+		\caption{Update between colony and independent country}
+		\label{fig:fig4c}
+	\end{subfigure}
+	\caption{Illustration of update of CCA}
+	\label{fig:fig4}
+\end{figure}
 
 \subsection{Empire removal}
 The improved CCA uses the same empire removal step as in the classical CCA.
