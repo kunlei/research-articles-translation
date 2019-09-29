@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  29 SEP 2019 10:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  29 SEP 2019 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -505,12 +505,12 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
  [2] [3] [4])
-(./sections/algorithm.tex) (./sections/experiments.tex)
+(./sections/algorithm.tex [5]) (./sections/experiments.tex)
 (./sections/conclusions.tex) (./hbmo-warehouse.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [5] (./hbmo-warehouse.aux) ) 
+) [6] (./hbmo-warehouse.aux) ) 
 Here is how much of TeX's memory you used:
  6054 strings out of 492995
  86850 string characters out of 6132704
@@ -518,7 +518,7 @@ Here is how much of TeX's memory you used:
  9452 multiletter control sequences out of 15000+600000
  13159 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,8n,38p,369b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,8n,38p,379b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
@@ -533,10 +533,10 @@ ts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y10.pfb>
-Output written on hbmo-warehouse.pdf (5 pages, 159710 bytes).
+Output written on hbmo-warehouse.pdf (6 pages, 163014 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 75 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
