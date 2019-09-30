@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  29 SEP 2019 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  30 SEP 2019 07:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -505,12 +505,12 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
  [2] [3] [4])
-(./sections/algorithm.tex [5]) (./sections/experiments.tex)
+(./sections/algorithm.tex [5] [6]) (./sections/experiments.tex [7])
 (./sections/conclusions.tex) (./hbmo-warehouse.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [6] (./hbmo-warehouse.aux) ) 
+) [8] (./hbmo-warehouse.aux) ) 
 Here is how much of TeX's memory you used:
  6054 strings out of 492995
  86850 string characters out of 6132704
@@ -533,10 +533,10 @@ ts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y10.pfb>
-Output written on hbmo-warehouse.pdf (6 pages, 163014 bytes).
+Output written on hbmo-warehouse.pdf (8 pages, 168794 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
