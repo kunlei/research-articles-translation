@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex ga-scheduling"] 1570222745 "ga-scheduling.aux" "ga-scheduling.bbl" "ga-scheduling" 1570222745
+["bibtex ga-scheduling"] 1570286136 "ga-scheduling.aux" "ga-scheduling.bbl" "ga-scheduling" 1570286136
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1480098435 26816 ffe5423d2019860bad9f54bc402fac15 ""
   "biblio.bib" 1569246375 1741 2faa32109358de297f50a853b00991cf ""
-  "ga-scheduling.aux" 1570222745 2037 a3ac857874a7bcdae391b0fdaebfa3cd ""
+  "ga-scheduling.aux" 1570286136 2037 a3ac857874a7bcdae391b0fdaebfa3cd ""
   (generated)
-  "ga-scheduling.blg"
   "ga-scheduling.bbl"
-["pdflatex"] 1570222744 "/Users/klian/Documents/person/research/klian-papers/translation/ga-scheduling/ga-scheduling.tex" "/Users/klian/Documents/person/research/klian-papers/translation/ga-scheduling/ga-scheduling.pdf" "ga-scheduling" 1570222744
-  "/Users/klian/Documents/person/research/klian-papers/translation/ga-scheduling/ga-scheduling.aux" 1570222744 8 a94a2480d3289e625eea47cd1b285758 ""
+  "ga-scheduling.blg"
+["pdflatex"] 1570286135 "/Users/klian/Documents/person/research/klian-papers/translation/ga-scheduling/ga-scheduling.tex" "/Users/klian/Documents/person/research/klian-papers/translation/ga-scheduling/ga-scheduling.pdf" "ga-scheduling" 1570286135
+  "/Users/klian/Documents/person/research/klian-papers/translation/ga-scheduling/ga-scheduling.aux" 1570286135 8 a94a2480d3289e625eea47cd1b285758 ""
   "/Users/klian/Documents/person/research/klian-papers/translation/ga-scheduling/ga-scheduling.tex" 1570219358 1745 f0811839dfa2c9a45df5a1fbd9ba49b1 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1480098689 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -120,7 +120,7 @@
   "ga-scheduling.tex" 1570219358 1745 f0811839dfa2c9a45df5a1fbd9ba49b1 ""
   "sections/abstract.tex" 1570219646 1033 51836ece4420eb857535dc65d8570e2f ""
   "sections/conclusions.tex" 1569245672 801 b2d579c0433b25800a6f42073e46fb36 ""
-  "sections/dynamic-scheduling-strategy.tex" 1569290596 5029 0ae488aa5cfce7f0f29d022fd20a0202 ""
+  "sections/dynamic-scheduling-strategy.tex" 1570285074 5029 0ae488aa5cfce7f0f29d022fd20a0202 ""
   "sections/experiments.tex" 1569291346 5110 731cb9f7366fb3442996e7818f1fd68c ""
   "sections/figure1.jpg" 1569289759 30375 120ca7ee6fa375a1facbe64002c2e4af ""
   "sections/figure2.jpg" 1569289858 79765 a82c4aee0f373e12db84fa18056058d7 ""
@@ -128,10 +128,10 @@
   "sections/figure4.jpg" 1569290368 95817 3cd58b82a27b1bd9ca96d5498d5f963e ""
   "sections/introduction.tex" 1570221419 2744 5e9e0d9edfb30a604afe64496c9b51b4 ""
   "sections/problem.tex" 1570222514 3445 20c822fc955f1481f11e5c068ae2f72a ""
-  "sections/rolling-scheduling-strategy.tex" 1570222742 3174 00b86082997a9920bd7b85e023df50f1 ""
+  "sections/rolling-scheduling-strategy.tex" 1570286133 3329 4dd538cd5b3e9550d7be8d329151d0bf ""
   (generated)
-  "/Users/klian/Documents/person/research/klian-papers/translation/ga-scheduling/ga-scheduling.pdf"
   "/Users/klian/Documents/person/research/klian-papers/translation/ga-scheduling/ga-scheduling.log"
   "ga-scheduling.aux"
   "ga-scheduling.log"
+  "/Users/klian/Documents/person/research/klian-papers/translation/ga-scheduling/ga-scheduling.pdf"
   "ga-scheduling.pdf"
