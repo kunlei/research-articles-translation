@@ -1,25 +1,25 @@
 \section{Dynamic Scheduling Problem Description}
-Static scheduling problems involve $n$ jobs to be processed on $m$ machines and the scheduling plan can be determined after the processing order is decided for every job on all the machines.
+Static scheduling problems involve $n$ jobs to be processed on $m$ machines and the desired scheduling plan can be determined after the processing order is decided for every job on all the machines.
 However, in real-world manufacturing systems, this processing order needs to be rescheduled whenever new orders arrive, machines break down or raw materials get delayed.
 
-The part machining in manufacturing environments is viewed as a dynamic process where jobs become available for processing sequentially, followed by machine processing and exiting the manufacturing system after their processes are finished.
-Dynamic events refer to entities that trigger the rescheduling of existing jobs due to changes in scheduling environment, and they can be classified into four categories:
+Job processing in manufacturing environments is viewed as a dynamic process where jobs become available for processing sequentially, followed by machine processing and exiting the manufacturing system after their processes are finished.
+Dynamic events refer to entities that trigger the rescheduling of existing jobs due to changes in scheduling environments, and they can be classified into four categories:
 \begin{itemize}
-	\item Job-related events, these include stochastic arrivals of jobs, randomness in job processing times, changes in delivery due date, dynamism in job processing priorities and and order changes.
+	\item Job-related events, these include stochastic arrivals of jobs, randomness in job processing times, changes in delivery due date, dynamism in job processing priorities and order changes.
 	\item Machine-related events, these include machine break-downs, limited capacity, machine deadlock and conflicts in manufacturing capacity.
 	\item Process-related events, these include process delay, quality negation and output un-stability.
 	\item Other events, these include absent operators, delayed arrival or unexpected flaws of raw materials, and dynamic processing routes.
 \end{itemize}
 
-In the classical job shop static scheduling problems, the release time $r_i$ of every job is assumed to be zero and the objective is to minimize the make-span $C_{max}$, which is defined as the maximum completion time of all jobs, $C_{max} = \text{min}\{\text{max} C_i,\  i = 1, \cdots n\}$ where $C_i$ is the completion time of job $J_i$.
+In the classical job shop static scheduling problems, the release time $r_i$ of every job is assumed to be zero and the objective is to minimize the make-span $C_{max}$, which is defined as the maximum completion time of all jobs, that is, $C_{max} = \text{min}\{\text{max} C_i,\  i = 1, \cdots n\}$ where $C_i$ is the completion time of job $J_i$.
 In real-world dynamic manufacturing environments, however, jobs become available for process sequentially, meaning that their release times $r_i$ are different and unpredictable. 
 Since a job can only be processed after it becomes available, the maximum completion time of all jobs in dynamic scheduling problems is determined by the completion time of the latest-released job.
 Therefore, dynamic scheduling problems generally use the mean flow time of all jobs, $\bar{F}$, as the objective function instead of the maximum completion time of all jobs.
 
-This paper considers two performance metrics that are often seen in dynamic manufacturing environments: 1) minimization of mean flow time $\bar{F}$ where $\bar{F} = \text{min}(\frac{1}{n} \times \sum_{i = 1}^n C_i - r_i)$ and $r_i$ and $C_i$ are the release time and completion time of job $J_i$, respectively.
+This paper considers two performance metrics that are often used in dynamic manufacturing environments: 1) minimization of mean flow time $\bar{F}$ where $\bar{F} = \text{min}(\frac{1}{n} \times \sum_{i = 1}^n C_i - r_i)$, and $r_i$ and $C_i$ are the release time and completion time of job $J_i$, respectively;
 2) minimization of the weighted objective of maximum completion time $C_{max}$ and total tardiness. This weighted objective gives higher priority to urgent jobs which are required to finish by their delivery due dates, and minimizes the completion times of remaining jobs.
 For a scheduling problem with $n$ jobs and $m$ machines, the objective can be defined as follows:
 \begin{align}
 	\text{min}(\text{max}C_i + \alpha \times (\sum\text{max}(0, C_j - D_j))), \ (i \in S_{J_1}, j \in S_{J_2})
 \end{align}
-where $\alpha$ is the weighted penalty coefficient, $S_{J_1}$ is the job set that is being processed and $S_{J_2}$ is the newly inserted urgent job set, $C_i$ is the completion time for job $i \in S_{J_1}$, and $D_j$ is the delivery date for urgent job $j \in S_{J_2}$, and $C_j$ is the completion time.
+where $\alpha$ is the weighted penalty coefficient, $S_{J_1}$ is the job set that is being processed and $S_{J_2}$ is the newly inserted urgent job set, $C_i$ is the completion time for job $i \in S_{J_1}$, and $D_j$ is the delivery due date for urgent job $j \in S_{J_2}$, and $C_j$ is the completion time.

@@ -3,42 +3,36 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: ga-scheduling.aux
 The style file: plainnat.bst
 Database file #1: biblio.bib
-Illegal end of database file---line 125 of file biblio.bib
- :  year={2004}
- :             
-I'm skipping whatever remains of this entry
-Warning--empty year in zhang6
-Warning--empty year in zhang6
 You've used 6 entries,
             2773 wiz_defined-function locations,
-            636 strings with 5866 characters,
-and the built_in function-call counts, 2786 in all, are:
-= -- 259
+            637 strings with 5870 characters,
+and the built_in function-call counts, 2782 in all, are:
+= -- 260
 > -- 135
 < -- 5
 + -- 45
 - -- 39
-* -- 234
-:= -- 422
+* -- 231
+:= -- 423
 add.period$ -- 18
 call.type$ -- 6
 change.case$ -- 31
 chr.to.int$ -- 6
-cite$ -- 14
+cite$ -- 12
 duplicate$ -- 121
 empty$ -- 239
 format.name$ -- 55
-if$ -- 578
+if$ -- 579
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 6
 newline$ -- 38
 num.names$ -- 24
-pop$ -- 54
+pop$ -- 50
 preamble$ -- 1
 purify$ -- 25
 quote$ -- 0
-skip$ -- 93
+skip$ -- 96
 stack$ -- 0
 substring$ -- 149
 swap$ -- 6
@@ -46,8 +40,7 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 66
-warning$ -- 2
+warning$ -- 0
 while$ -- 29
 width$ -- 0
-write$ -- 84
-(There was 1 error message)
+write$ -- 85
