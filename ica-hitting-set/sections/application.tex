@@ -22,7 +22,7 @@ Table \ref{tab:tab4} shows all the required parts and their corresponding units.
 			4 & B I       && 12 & D F L     && 20 & B E J K \\
 			5 & A B E G K && 13 & B G J     && 21 & J L \\
 			6 & C D H L   && 14 & C J K L   && 22 & G \\
-			7 & D G H     && 15 & E H K     && 23 & E G K \\
+			7 & D G H     && 15 & F H K     && 23 & E G K \\
 			8 & A C J L   && 16 & A C F H J &&    & \\
 			\hline
 		\end{tabular}
@@ -32,7 +32,7 @@ Table \ref{tab:tab4} shows all the required parts and their corresponding units.
 
 The steps of using MCCA to solve the minimal hitting set problem to get the minimal number of production units are as follows:
 \begin{itemize}
-	\item Assign numbers to each manufacturing unit. In this case, 1 is assigned to A, 2 is assigned to B. Repeat this assignment until L is assigned 12. Create an input file by setting 5 as the number of manufacturing units corresponding to the parts, all other units are set to 0.
+	\item Assign numbers to each manufacturing unit. In this case, 1 is assigned to A, 2 is assigned to B. Repeat this assignment until 12 is assigned to L. Create an input file by setting 5 as the number of manufacturing units corresponding to the parts, all other units are set to 0.
 	\item Identify the minimal hitting sets using the implemented C++ code using parameters $N_{pop} = 100$, $N_{imp} = 7$, $N_{ind} = 5$, $N_{max} = 100$ and weight set as 0.6. Table \ref{tab:tab5} shows the computational results.
 	The minimal hitting sets that have the minimum number of elements are: $\{7,8,9,11,12\}$,  $\{1,7,9,11,12\}$, $\{1,2,7,8,12\}$, $\{2,7,8,10,12\}$, $\{2,7,8,11,12\}$, $\{6,7,9,11,12\}$, $\{7,8,9,10,12\}$.
 	\item Convert the hitting set with the minimal number of elements into manufacturing units: $\{G,H,I,K,L\}$, $\{A,G,I,K,L\}$, $\{A,B,G,H,L\}$, $\{B,G,H,J,L\}$, $\{B,G,H,K,L\}$, $\{F,G,I,K,L\}$, $\{G,H,I,J,L\}$.
