@@ -1,0 +1,7 @@
+!.gitignore
+*.aux
+*.bbl
+*.blg
+*.log
+*.gz
+
