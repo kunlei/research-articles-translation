@@ -1,14 +1,15 @@
 \section{Experiments}
-In this paper, we randomly generated 50 arrays of size 10 with values no greater than 20.
+In this paper, we randomly generate 50 arrays of size 10 with values no greater than 20.
 All the arrays are sorted non-decreasingly and all the equal numbers are set to 0.
-Put the 50 arrays into five groups: 1) the first group encompasses arrays 1 $\sim$ 10; 2) the second group encompasses arrays 1 $\sim$ 20; 3) the third group encompasses arrays 1 $\sim$ 30; 4) the first group encompasses arrays 1 $\sim$ 40; 5) the first group encompasses arrays 1 $\sim$ 50;
-These generated instances are solved using the modified CCA (MCCA) and the minimal hitting set algorithm based on dynamic maximum (DMDSE-Tree) \citep{c7zhang}.
-For each group, the minimal hitting set and average computation times from five runs are recorded to make further comparisons.
+The 50 arrays are then put into five groups: 1) the first group encompasses arrays 1 $\sim$ 10; 2) the second group encompasses arrays 1 $\sim$ 20; 3) the third group encompasses arrays 1 $\sim$ 30; 4) the first group encompasses arrays 1 $\sim$ 40; 5) the first group encompasses arrays 1 $\sim$ 50;
+These generated instances are solved independently using the MCCA and the minimal hitting set algorithm based on dynamic maximum degree (DMDSE-Tree) \citep{c7zhang}.
+For each group, the minimal hitting set and average computation times from five runs are recorded to make comparisons.
 
 The experiments are run on a Windows XP computer with Intel Pentium G630 2.70 GHz CPU and 2GB memory.
 All the algorithms are implemented using Visual C++ 6.0.
-The parameters of MCCA are set as follows: $N_{pop} = 100$, $N_{imp} = 7$, $N_{ind}  = 5$, the maximum number of iterations $N_{max} = 100$, the weight is set as $0.2, 0.3, \cdots, 0.8$ and $\alpha = 0.8$.
+The parameters of MCCA are set as follows: $N_{pop} = 100$, $N_{imp} = 7$, $N_{ind} = 5$, the maximum number of iterations $N_{max} = 100$, the weight is set as $0.2, 0.3, \cdots, 0.8$ and $\alpha = 0.8$.
 The minimal hitting set and computational time comparisons between MCCA and DMDSE-Tree are given table \ref{tab:tab1} and table \ref{tab:tab2}, respectively.
+
 
 \begin{table}[h!]
 	\begin{center}
@@ -53,7 +54,7 @@ The minimal hitting set and computational time comparisons between MCCA and DMDS
 \end{table}
 
 
-The experiments are run fives times and the average computation time and minimal hitting sets are obtained.
+The experiments are run five times and the average computation times and minimal hitting sets are obtained.
 Table \ref{tab:tab3} shows the comparisons between computation time percentage and number of minimal hitting sets.
 
 \begin{table}[h!]
@@ -75,5 +76,5 @@ Table \ref{tab:tab3} shows the comparisons between computation time percentage a
 \end{table}
 
 
-It can be seen from table \ref{tab:tab3} that MCCA is able to solve 90\% of instances with about 70\% of computational times when compared to DMDSE-Tree, which shows the superior performance of MCCA in solving minimal hitting set problem.
+It can be seen from table \ref{tab:tab3} that MCCA is able to solve 90\% of instances with about 70\% of computational times when compared to DMDSE-Tree, which shows the superior performance of MCCA in solving minimal hitting set problems.
 In addition, MCCA shows better robustness in solving problems with various scales.

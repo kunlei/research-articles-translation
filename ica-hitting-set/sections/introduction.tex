@@ -1,20 +1,21 @@
 \section{Introduction}
-There exist many real-world problems that can be modelled as identifying the minimal set from the non-empty intersection with each set in a given group.
-The minimal hitting set problem refers to such problems and examples include the creation of model-based diagnosis from the smallest conflict set, the search for gene fragment to expound certain gene characteristics in gene expression analysis and the decision problem when collective uses make book purchases at public expense.
-There have been lots of efforts in the research community to improve efficiency of solving the minimal hitting set problem, which is NP-hard.
-Reiter \citep{c1reiter1987theory} proposed the first method in calculating the minimal hitting set problem in model-based diagnosis using HS-Tree, but it suffers from loss of feasible solutions due to its adoption of pruning and closing strategies in its search process.
-Greiner \citep{c2greiner1989correction} proposed an improved HS-Tree algorithm named HS-DAG that uses the idea of acyclic graphs in order to identify all the minimal hitting sets.
-The minimal hitting set problem has received lots of attentions from research community and many algorithms are proposed to solve this problem more effectively, which can be classified into exact algorithms and heuristic algorithms.
-Examples of exact algorithms include the algorithm based on BNB-HSSE \citep{c3xiaomei}, hybrid algorithm based on CHS tree and recursive boolean algorithm \citep{c4wang2010research}, hybrid algorithm based on HSSE tree and binary mark \citep{c5feng2011method}, branch reduction algorithm \citep{c6shi2010exact} and algorithm based on dynamic maximum (DMDSE-Tree) \citep{c7zhang}.
-These exact methods cannot satisfy the time and space requirements of engineering problems in large scale complex systems, and it is not necessary to find the optimal solutions in these systems.
+Many real-world problems can be modeled as the minimal hitting set problem, which is defined as the set with minimum cardinality that has a non-empty intersection with each set in a collection of sets.  
+Examples include the creation of model-based diagnosis from the smallest conflict set, the search for gene fragments to expound certain gene characteristics in gene expression analysis and the decision problem when collective users make book purchases at public expense.
+There have been lots of efforts in the research community to improve algorithm efficiency in solving the minimal hitting set problem, which is NP-hard.
+Reiter \citep{c1reiter1987theory} proposed the HS-Tree method to identify the minimal hitting set in model-based diagnosis.
+It utilizes pruning strategy and closing strategy in the solution process and may encounter the problem of losing feasible solutions.
+To overcome this issue and find all the possible minimal hitting sets, Greiner \citep{c2greiner1989correction} proposed an improved HS-Tree algorithm named HS-DAG based on the idea of acyclic graphs.
+The minimal hitting set problem has received lots of attentions from the research community and many algorithms have been proposed to solve it more effectively, which can be classified into exact algorithms and heuristic algorithms.
+Examples of exact algorithms include the algorithm based on BNB-HSSE \citep{c3xiaomei}, hybrid algorithm based on CHS tree and recursive boolean algorithm \citep{c4wang2010research}, hybrid algorithm based on HSSE tree and binary mark \citep{c5feng2011method}, branch reduction algorithm \citep{c6shi2010exact} and algorithm based on dynamic maximum degree (DMDSE-Tree) \citep{c7zhang}.
+These exact methods cannot satisfy the time and space requirements of engineering problems in large scale complex systems, and, from a practical application perspective, it is often not necessary to find the optimal solutions in these systems.
 Therefore, heuristic algorithms have been proposed to approximate the optimal minimal hitting sets using algorithms like discrete particle swarm algorithm \citep{c8}, binary particle swarm optimization \citep{c9}, and low-cost heuristic algorithm STACCATO based on heuristic functions \citep{c10}.
 
 
 Atashpaz-Gargari et al. \citep{c11} proposed a population-based colonial competitive algorithm (CCA) by simulating the process of colonial competition in human society evolvement.
-It shows better convergence rate when compared to genetic algorithm and particle swarm optimization and has received more and more applications in recent years.
+It demonstrates better convergence rate when compared to genetic algorithm and particle swarm optimization, and has received more and more applications in recent years.
 For example, Forouharfard et al. \citep{c12} used the colonial competitive algorithm to solve the logistic planning problem in transshipment warehouses.
 Kaveh et al. \citep{c13} applied the colonial competitive algorithm to the structural optimal design problem.
 Nazari et al. \citep{c14} employed the colonial competitive algorithm for the product outsourcing problems in mix-model production.
-Sarayloo et al. \citep{c15} applied the colonial competitive algorithm in solving the dynamic unitised manufacturing problem. 
+Sarayloo et al. \citep{c15} applied the colonial competitive algorithm in solving the dynamic unit manufacturing problem. 
 In addition, numerous attempts have been made to improve the performance of colonial competitive algorithm and apply it to other combinatorial optimization problems \citep{c16}, including mixed-model assembly line balancing problem \citep{c17} and the data clustering problem \citep{c18}.
-In this paper, we propose an improved colonial competitive algorithm to solve the minimal hitting set problem and also validate its performance using the enterprise equipment selection problem.
+In this paper, we propose a modified colonial competitive algorithm (MCCA) to solve the minimal hitting set problem and also validate its performance using the enterprise equipment selection problem.
