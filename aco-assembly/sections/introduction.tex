@@ -1,22 +1,23 @@
 
 \section{Introduction}
-Assembly line is a widely used component of manufacturing factories and it faces many problems  in the design and operation of assembly lines, assembly line balancing problem (ALBP) being one of most important ones.
-A small improvement towards ALBP often leads to significant efficiency enhancement and cost reduction \citep{salveson1};
-On the other hand, ALBP is a classical NP-hard combinatorial optimization problem in which the complexity increases exponentially with more number of jobs and there yet exists polynomial-time algorithms to find optimization solutions for this problem \citep{kilincci2}.
-Currently, there exist three solution strategies to solve ALBP: exact algorithms, heuristic algorithms and artificial intelligence algorithms.
-Exact algorithms are able to find the optimal solutions, for only small-sized problems and with tremendous computation times, therefore, they can hardly be applied in real-world production systems \citep{scholl3, peeter4}.
-Heuristic algorithms have received many attentions from researchers due to its theoretical simplicity; on the other hand, they generally take long time to identify the optimal solution and it is often hard to verify the solutions they found are optimal \citep{ponnambalam5}.
-In recent years, artificial intelligence algorithms, including genetic algorithms, simulated annealing and tabu search, witness significant advances in the fields and have been used to solve ALBP successfully \citep{azcan6, azcan7}.
+Assembly line is a widely used component in manufacturing enhancements, and various challenges emerge in its design and daily operations, among which the assembly line balancing problem (ALBP) exists as one of most significant ones.
+It is noted that a small improvement towards ALBP can lead to significant efficiency enhancement and cost reduction \citep{salveson1};
+On the other hand, ALBP is a classical NP-hard combinatorial optimization problem in which the complexity increases exponentially with the number of jobs and there yet exist polynomial-time algorithms to obtain optimal solutions in reasonable computation times \citep{kilincci2}.
+Three solution strategies towards solving the ALBP can be found in the literature, namely, exact algorithms, heuristic algorithms and artificial intelligence algorithms.
+Exact algorithms are able to find optimal solutions, but often require tremendous computation power and time.
+Due to these limitations, they are mainly used to solve small-sized problems and can hardly be applied in real-world production systems \citep{scholl3, peeter4}.
+Heuristic algorithms have received many attentions from the research community due to its implementation simplicity; however, they generally take long time to identify optimal solutions and also it is often hard to verify whether the solutions they found are optimal or not \citep{ponnambalam5}.
+Artificial intelligence algorithms, including genetic algorithms, simulated annealing and tabu search, witness significant advancements in recent years and have been applied to solve the ALBP successfully \citep{azcan6, azcan7}.
 
-Ant colony optimization (ACO) is another intelligent optimization algorithm proposed proposed by Clolrni \citep{inproceedings8} in 1991 and has been applied to various combinatorial optimization problems.
-\citet{bautista9} made the first attempt to solve a simple assembly line balancing problem using ant colony algorithms based on ant system and the optimization results were not optimal.
-\citet{patrick10} obtained superior performance of ACO in solving the assembly balancing problem with multiple job types, stochastic processing times and parallel workstations.
-\citet{bautista11} studied an assembly balancing problem with timing and spatial constraints using ant colony algorithms.
+Ant colony optimization (ACO) is an intelligent optimization algorithm proposed by Clolrni \citep{inproceedings8} in 1991 and has been applied to various combinatorial optimization problems.
+\citet{bautista9} made the first attempt to solve a simple assembly line balancing problem using ant colony algorithms based on an ant system, but the optimization results were not optimal.
+\citet{patrick10} obtained superior ACO performance on a number of benchmarking instances in solving a more complex assembly balancing problem that is characterized by mixed job types, stochastic processing times and parallel workstations.
+\citet{bautista11} studied an assembly balancing problem with timing and spatial constraints and explored its solution method based on ant colony algorithms.
 
-The aforementioned researches in assembly balancing problems using ACO suffer from inferior performance when compared with other algorithms and the reasons are twofold.
-First, the way the pheromone is accumulated in some algorithms is too simplified, which prevents ACO finding optimal solutions.
-Second, the objective function considers only limited factors, which makes it difficult to differentiate good solutions from bad solutions.
-To address this, we propose an adaptive ant colony algorithm to solve the assembly line balancing problems.
-It tries to avoid local optima by utilizing both external and historical information to dynamically adjust global pheromone evaporation factor in the process of path contruction of an ant.
-In addition, the algorithm incorporates balancing and smoothing as part of the objective function, which improves ACO's ability in differentiating solutions.
-The superirority of the proposed algorithm is validated on benchmark problem instances.
+The aforementioned researches in solving assembly balancing problems using ACO suffer various performance issues when compared with other algorithms in the literature.
+Some of them employ an oversimplified pheromone updating strategy that jeopardizes ACO's ability to converge to optimal solutions. 
+Others use simple objective functions that often fail to correctly evaluate solution qualities, which results in inferior performance in identifying promising solutions.
+To address these issues, we propose an adaptive ACO to solve the assembly line balancing problem.
+It tries to avoid local optima by utilizing both external and historical information to adaptively adjust global pheromone evaporation factor in the process of ant path construction.
+In addition, the algorithm incorporates balancing and smoothing factors in the objective function, which improves ACO's ability in identifying promising solutions.
+Performance of the proposed algorithm is validated on benchmarking instances.
