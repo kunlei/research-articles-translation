@@ -35,15 +35,15 @@ where $U_i$ is the number of succeeding tasks of task $i$.
 
 In order to improve ACO's search capability and avoid stagnating into local optima, we propose a hybrid search strategy by which an ant chooses task $i$ and assigns it to workstation $j$:
 \begin{align}
-	\alpha(x)=\begin{cases}
+	i=\begin{cases}
 	I_1 \ \ \text{arg} max_{i \in N_j}(\tau_{ij}(t))^{\alpha} (\eta_i)^{\beta}, 0 \leq r \leq r_1 \\
 	I_2 \ \ p_{ij} = \frac{(\tau_{ij}(t))^{\alpha} (\eta_i)^{\beta}}{\sum_{z \in N_j}(\tau_{zj}(t))^{\alpha} (\eta_z)^{\beta}}, r_1 < r \leq r_1 + r_2 \\
-	I_3 \ \ i \in N, r_1 + r_2 < r \leq r_1 + r_2 + r_3
+	I_3 \ \ \text{random select} \ i \in N, r_1 + r_2 < r \leq r_1 + r_2 + r_3
 	\end{cases} \label{formula7}
 \end{align}
 where $r$ is a random number chosen from (0, 1); $r_1, r_2, r_3$ are user-defined parameters and $0 \leq r_1, r_2, r_3 \leq 1, r_1 + r_2 + r_3 = 1$; $N_j$ is the set of assignable tasks for ant $i$ on the current workstation $j$; $z$ is an assignable task; and $\alpha, \beta$ are two key parameters deciding pheromone intensity and heuristic information.
 
-This hybrid search strategy probabilistically chooses one of the three strategies: 1) utilization: choose with probability $r_1$ from assignable tasks $N_j$ the task with maximal $(\tau_{ij}(t))^{\alpha} (\eta_i)^{\beta}$ to assign to workstation $j$; 2) exploration: choose with probability $r_2$ that is given by $I_2$ in the equation a task; 3) random selection: choose with probability $r_3)$ a task from the set of assignable tasks.
+This hybrid search strategy probabilistically chooses one of the three strategies: 1) utilization: choose with probability $r_1$ from assignable tasks $N_j$ the task with maximal $(\tau_{ij}(t))^{\alpha} (\eta_i)^{\beta}$ to assign to workstation $j$; 2) exploration: choose with probability $r_2$ that is given by $I_2$ in the equation a task; 3) random selection: choose with probability $r_3$ a task from the set of assignable tasks.
 
 Following the aforementioned strategy, save the assignable task chosen by ant $k$ into table $tabu_k$ and when all $n$ tasks have been added to $tabu_k$, ant $k$ has finished on traversal of the search graph and the resulting task sequence is a feasible solution to the underlying problem.
 
