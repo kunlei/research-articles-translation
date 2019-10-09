@@ -1,15 +1,15 @@
-  \section{Warehouse facility location model}
-There exist many constraints in warehouse facility location problems\citep{c1, c2}, which is NP-hard to solve due to the fact that its complexity increases exponentially with increases in scale \citep{c3}.
-Numerous approaches have been proposed to address this problem, including genetic algorithm, simulated annealing, fuzzy comprehensive evaluation, shortest path algorithm.
-Bee colony optimization (BCO) \citep{c4} is a new metaheuristic algorithm proposed in recent years that has received more and more attentions from the research community and has been applied to solve various industrial optimization problems.
-This paper builds the formal mathematical model for the warehouse facility location problem, followed by detailed descriptions of adapting BCO to solve this problem.
-Then, performance of BCO is validated using the real problem encountered in the rail transit facility location scenario in Wuhan, China.
+\section{Warehouse facility location model}
+There exist many constraints in warehouse facility location problems\citep{c1, c2}, which are NP-hard to solve due to the fact that the number of feasible solutions increases exponentially with linear increase in problem size \citep{c3}.
+Numerous attempts have been made to tackle this problem effectively in the research literature, among which genetic algorithm, simulated annealing, fuzzy comprehensive evaluation, shortest path algorithm are representative algorithms that have been applied to this problem.
+Bee colony optimization (BCO) \citep{c4} is a new meta-heuristic algorithm that has received lots of attentions from the research community, and numerous successful engineering applications of BCO have been reported in recent years.
+This paper first builds the formal mathematical model for the warehouse facility location problem, followed by detailed descriptions of adapting BCO to solve this problem.
+Then, performance of BCO is validated using the real-world problem encountered in the rail transit facility location design in Wuhan, China.
 
-It is known that, in a rail transit system, car depots consume around 70\% of equipment and materials, while the rest of them is used to meet demands from maintenance sites that are usually built close to car depots.
-Therefore, we assume that all the potential warehouse facility locations are known in advance for all the eight rail lanes in Wuhan, and the problem is to decide the optimal number of warehouse facilities and their corresponding locations subject to the constraint of satisfying demands from all the rail transit network.
-The objective is to minimize total warehouse facility costs, which consists of construction cost, maintenance cost and delivery cost.
-Note that the construction cost is a fixed cost for each warehouse facility, and the rest two costs are called operational cost, which accumulates gradually.
-It is possible that one warehouse facility can supply multiple rail lanes and the cost increase coefficient is determined based on established rail transit systems.
+It is noted that, in a rail transit system, car depots consume around 70\% of equipments and materials, while the rest of them is used to satisfy demands from maintenance sites that are usually built close to car depots.
+Therefore, this paper assumes that all the potential warehouse facility locations are known in advance for all the eight rail lanes in Wuhan, and the problem is to decide the optimal number of warehouse facilities and their corresponding locations subject to the constraint of satisfying demands from all the rail transit network.
+The objective is to minimize the total costs, which consists of construction cost, maintenance cost and delivery cost.
+Note that the construction cost is a fixed cost for each warehouse facility, and the rest two costs are called operational cost, which accumulates gradually over time.
+It is possible that one warehouse facility can supply multiple rail lanes and the cost increase coefficient is determined based on experience of existing rail transit systems.
 
 The three cost components are explained below:
 \begin{itemize}
@@ -31,7 +31,7 @@ The three cost components are explained below:
 	$C_{Mbuild}$ is the extra cost associated with serving multiple rail lanes;
 	$C_{10}$ is the total construction cost of a warehouse facility;
 	$C_{11}(x)$ is the function to calculate extra costs, which is estimated using a linear function based on experience.
-	\item Maintenance cost. Similar to the aforementioned construction cost, the  cost consists of both the basic maintenance cost of a single warehouse facility and the extra cost incurred by serving multiple rail lanes.
+	\item Maintenance cost. Similar to the aforementioned construction cost, this cost consists of both the basic maintenance cost of a single warehouse facility and the extra cost incurred by serving multiple rail lanes.
 	Maintenance costs come from various general expenses including personnel salaries, utilities and service costs.
 	The extra cost of serving multiple lanes is also estimated using a linear function, but the coefficients are different.
 	The cost can be described mathematically as
@@ -44,7 +44,7 @@ The three cost components are explained below:
 		&= C_{operate} \times (C_{Moperate} \times \sum_{j = 0}^8 x_{ij} + (1 - C_{Moperate}) \times y_i)
 	\end{align}
 	where $C_{20}$ is the basic warehouse facility maintenance cost;
-	$C_{21}(x)$ is the function to calculate the extra cost;
+	$C_{21}(x)$ is the function to calculate extra cost;
 	$C_{operate}$ is the maintenance cost coefficient of one single warehouse facility;
 	$C_{Moperate}$ is the cost coefficient of one warehouse servicing multiple rail lanes.
 	\item Delivery cost. This cost is decided by unit delivery cost, delivery distance and whether a rail lane is covered by a particular warehouse facility:
@@ -52,7 +52,7 @@ The three cost components are explained below:
 		C_3 = T_{times} \times \sum_{i = 0}^8 \sum_{j = 0}^8 Ct_{ij} \times D_{ij} \times x_{ij}
 	\end{align}
 	where delivery distance and unit cost are both random variables following certain distributions.
-	$T_{times}$ is the number of delivery times within one year.
+	$T_{times}$ is the delivery frequency within one year.
 	$Ct_{ij}$ is the delivery cost between two locations and $T_{times} = 365 / P_{period}$ where $P_{period}$ is the delivery cycle in days.
 \end{itemize}
 
@@ -72,7 +72,7 @@ The model has the following constraints:
 		C_1 < C_{1before}
 	\end{align}
 	where $C_{1before}$ is the construction cost before optimization.
-	\item Warehouse facility size limit which limits the maximal number rail lanes a warehouse facility can serve at the same time:
+	\item Warehouse facility size limit, which limits the maximal number rail lanes a warehouse facility can serve at the same time:
 	\begin{align}
 		\sum_{j = 0}^8 x_{ij} \leq scale, \ \forall j = 1, 2, \cdots, 8
 	\end{align}
@@ -93,4 +93,3 @@ The model has the following constraints:
 		x_{ij} \leq y_i, \ \forall i,j = 1, 2, \cdots, 8
 	\end{align}
 \end{enumerate}
-
